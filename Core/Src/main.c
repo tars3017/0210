@@ -109,8 +109,9 @@ double ut1, ut2, ut3, ut4;
 double error_last1, error_last2, error_last3, error_last4;
 double errorsum1, errorsum2, errorsum3, errorsum4;
 int n;
-
+int kkk;
 int count; // test connect to ROS
+
 /* USER CODE END 0 */
 
 /**
@@ -124,7 +125,8 @@ int main(void)
 	SP1 = 0, SP2 = 0, SP3 = 0, SP4 = 0;
 
 	n = 0;
-
+	kkk = 0;
+	count = 0;
 	error1 = PV1 - SP1;
 	error2 = PV2 - SP2;
 	error3 = PV3 - SP3;
@@ -1034,6 +1036,13 @@ static void MX_GPIO_Init(void)
 PID ?�度*/
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim -> Instance == TIM2){
+		kkk += 1;
+		if(kkk == 10){
+			publish_vel();
+			kkk = 0;
+		}
+
+
 		enc1 = __HAL_TIM_GetCounter(&htim3);
 		enc2 = __HAL_TIM_GetCounter(&htim8);
 		enc3 = __HAL_TIM_GetCounter(&htim23);
@@ -1150,6 +1159,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		error_last2 = error2;
 		error_last3 = error3;
 		error_last4 = error4;
+
+
 	}
 }
 
