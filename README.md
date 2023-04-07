@@ -4,7 +4,7 @@
 在最大的資料夾底下(有 .git 的那個)
 ```
 git add .
-git commit -m "some message you want to type"
+git commit
 git push
 ```
 

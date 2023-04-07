@@ -9,14 +9,15 @@
 #define MAINPP_H_
 
 #ifdef __cplusplus
+
+extern int count;
+
 extern "C"
 {
 #endif
 
 void setup(void);
 void loop(void);
-
-extern int count;
 
 #ifdef __cplusplus
 }

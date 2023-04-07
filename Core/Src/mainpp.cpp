@@ -1,6 +1,7 @@
 #include "mainpp.h"
 #include "ros.h"
 #include "std_msgs/Int64.h"
+#include "STM32Hardware.h"
 
 void callback(const std_msgs::Int64 &msg)
 {
@@ -18,6 +19,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
     nh.getHardware()->reset_rbuf();
 }
+
 void setup(void)
 {
     nh.initNode();
