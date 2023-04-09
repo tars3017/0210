@@ -11,6 +11,7 @@
 #ifdef __cplusplus
 
 extern int count;
+extern double get_vel_x, get_vel_y, get_vel_z;
 
 extern "C"
 {
@@ -18,6 +19,7 @@ extern "C"
 
 void setup(void);
 void loop(void);
+void publish_vel(double, double, double);
 
 #ifdef __cplusplus
 }

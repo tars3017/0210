@@ -63,6 +63,7 @@ DMA_HandleTypeDef hdma_usart3_tx;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM4_Init(void);
@@ -75,7 +76,7 @@ static void MX_TIM15_Init(void);
 static void MX_TIM23_Init(void);
 static void MX_TIM24_Init(void);
 static void MX_USART3_UART_Init(void);
-static void MX_DMA_Init(void);
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -92,8 +93,12 @@ double ut1, ut2, ut3, ut4;
 double error_last1, error_last2, error_last3, error_last4;
 double errorsum1, errorsum2, errorsum3, errorsum4;
 int n;
-int kkk;
+int kkk; // for publish to ROS frequency divider
 int count; // test connect to ROS
+
+// get command velocity from ROS
+double get_vel_x, get_vel_y, get_vel_z;
+// void publish_vel(double x, double y, double z);
 
 /* USER CODE END 0 */
 
@@ -1013,7 +1018,6 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
 // PID matlab
 /*
 	void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
@@ -1035,8 +1039,9 @@ PID ?�度*/
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim -> Instance == TIM2){
 		kkk += 1;
-		if(kkk == 10){
-			// publish_vel();
+		if(kkk == 10000){
+			// TODO change parameter to real velocity
+//			publish_vel(get_vel_x, get_vel_y, get_vel_z);
 			kkk = 0;
 		}
 
