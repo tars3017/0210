@@ -96,7 +96,7 @@ int n;
 int kkk; // for publish to ROS frequency divider
 int count; // test connect to ROS
 
-// TODO measure lx, ly
+// measure lx, ly
 double lx, ly, r; // car's length
 // get command velocity from ROS
 double get_vel_x, get_vel_y, get_vel_z;
@@ -146,6 +146,9 @@ int main(void)
 	push_vel_x = 0;
 	push_vel_y = 0;
 	push_vel_z = 0;
+
+	lx = 23;
+	ly = 25;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -1173,8 +1176,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 
 		kkk += 1;
 		if(kkk == 10){
-			// TODO change parameter to real velocity
+			// change parameter to real velocity
 			 publish_vel(push_vel_x, push_vel_y, push_vel_z);
+//			publish_vel(get_vel_x, get_vel_y, get_vel_z);
 			kkk = 0;
 		}
 	}

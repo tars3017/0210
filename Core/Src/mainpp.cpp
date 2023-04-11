@@ -41,6 +41,7 @@ void setup(void)
 //    pub_vel = nh.advertise<geometry_msgs::Twist>("/base_speed", 1);
     nh.subscribe(sub_vel);
     nh.subscribe(sub);
+    nh.advertise(pub_vel);
 }
 void loop(void)
 {
