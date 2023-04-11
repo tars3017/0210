@@ -96,8 +96,11 @@ int n;
 int kkk; // for publish to ROS frequency divider
 int count; // test connect to ROS
 
+// TODO measure lx, ly
+double lx, ly, r; // car's length
 // get command velocity from ROS
 double get_vel_x, get_vel_y, get_vel_z;
+double push_vel_x, push_vel_y, push_vel_z;
 // void publish_vel(double x, double y, double z);
 
 /* USER CODE END 0 */
@@ -140,7 +143,9 @@ int main(void)
 	errorsum3 = 0;
 	errorsum4 = 0;
 
-
+	push_vel_x = 0;
+	push_vel_y = 0;
+	push_vel_z = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -1038,12 +1043,11 @@ static void MX_GPIO_Init(void)
 PID ?�度*/
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim -> Instance == TIM2){
-		kkk += 1;
-		if(kkk == 10000){
-			// TODO change parameter to real velocity
-//			publish_vel(get_vel_x, get_vel_y, get_vel_z);
-			kkk = 0;
-		}
+
+		SP1 = 1/r * (get_vel_x - get_vel_y - (lx + ly) * get_vel_z); // fl
+		SP2 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z); // fr
+		SP3 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z); // rl
+		SP4 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z); // rr
 
 
 		enc1 = __HAL_TIM_GetCounter(&htim3);
@@ -1163,7 +1167,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		error_last3 = error3;
 		error_last4 = error4;
 
+		push_vel_x = (PV1 + PV2 + PV3 + PV4) * r/4 ;
+		push_vel_y = (-PV1 + PV2 + PV3 - PV4) * r/4 ;
+		push_vel_z = (-PV1 + PV2 - PV3 + PV4) * r/(4 * (lx + ly) );
 
+		kkk += 1;
+		if(kkk == 10){
+			// TODO change parameter to real velocity
+			 publish_vel(push_vel_x, push_vel_y, push_vel_z);
+			kkk = 0;
+		}
 	}
 }
 
