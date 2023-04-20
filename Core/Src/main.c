@@ -63,7 +63,6 @@ DMA_HandleTypeDef hdma_usart3_tx;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_DMA_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM4_Init(void);
@@ -75,6 +74,7 @@ static void MX_TIM8_Init(void);
 static void MX_TIM15_Init(void);
 static void MX_TIM23_Init(void);
 static void MX_TIM24_Init(void);
+static void MX_DMA_Init(void);
 static void MX_USART3_UART_Init(void);
 
 /* USER CODE BEGIN PFP */
@@ -101,6 +101,7 @@ double lx, ly, r; // car's length
 // get command velocity from ROS
 double get_vel_x, get_vel_y, get_vel_z;
 double push_vel_x, push_vel_y, push_vel_z;
+int gear;
 // void publish_vel(double x, double y, double z);
 
 /* USER CODE END 0 */
@@ -150,6 +151,8 @@ int main(void)
 	lx = 23;
 	ly = 25;
 	r = 10;
+
+	gear = 75;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -170,7 +173,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_DMA_Init();
   MX_TIM2_Init();
   MX_TIM3_Init();
   MX_TIM4_Init();
@@ -182,6 +184,7 @@ int main(void)
   MX_TIM15_Init();
   MX_TIM23_Init();
   MX_TIM24_Init();
+  MX_DMA_Init();
   MX_USART3_UART_Init();
 
   /* USER CODE BEGIN 2 */
@@ -913,7 +916,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOF, GPIO_PIN_2, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOF, GPIO_PIN_2|GPIO_PIN_10, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LED_GREEN_Pin|GPIO_PIN_2|LED_RED_Pin, GPIO_PIN_RESET);
@@ -933,8 +936,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PF2 */
-  GPIO_InitStruct.Pin = GPIO_PIN_2;
+  /*Configure GPIO pins : PF2 PF10 */
+  GPIO_InitStruct.Pin = GPIO_PIN_2|GPIO_PIN_10;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -1038,14 +1041,14 @@ PID ?�度*/
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim -> Instance == TIM2){
 
-		SP1 = 1/r * (get_vel_x - get_vel_y - (lx + ly) * get_vel_z); // fl
-		SP2 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z); // fr
-		SP3 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z); // rl
-		SP4 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z); // rr
+//		SP1 = 1/r * (get_vel_x - get_vel_y - (lx + ly) * get_vel_z); // fl
+//		SP2 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z); // fr
+//		SP3 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z); // rl
+//		SP4 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z); // rr
 
 
 		enc1 = __HAL_TIM_GetCounter(&htim3);
-		enc2 = __HAL_TIM_GetCounter(&htim8);
+		enc2 = __HAL_TIM_GetCounter(&htim8) * (-1);
 		enc3 = __HAL_TIM_GetCounter(&htim23);
 		enc4 = __HAL_TIM_GetCounter(&htim24);
 
@@ -1053,8 +1056,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 
 		PV1 = (double) enc1 / (4 * 512 * 36 * 0.001);
 		PV2 = (double) enc2 / (4 * 512 * 36 * 0.001);
-		PV3 = (double) enc3 / (4 * 512 * 36 * 0.001);
-		PV4 = (double) enc4 / (4 * 512 * 36 * 0.001);
+		PV3 = (double) enc3 / (4 * 500 * 36 * 0.001);
+		PV4 = (double) enc4 / (4 * 512 * gear * 0.001);
 
  		__HAL_TIM_SetCounter(&htim3, 0);
  		__HAL_TIM_SetCounter(&htim8, 0);
@@ -1102,20 +1105,20 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 
 
 		if(ut1 > 0){
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_2, GPIO_PIN_RESET);
-		}else if(ut1 < 0){
 			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_2, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);
+		}else if(ut1 < 0){
+			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET);
 		}else if(ut1 == 0){
 			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_2, GPIO_PIN_RESET);
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET);
 		}
 
-		if(ut2 > 0){
+		if(ut2 < 0){
 			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_0, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_1, GPIO_PIN_RESET);
-		}else if(ut2 < 0){
+		}else if(ut2 > 0){
 			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_0, GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_1, GPIO_PIN_SET);
 		}else if(ut2 == 0){
@@ -1135,11 +1138,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		}
 
 		if(ut4 > 0){
-			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_10, GPIO_PIN_SET);
-			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_12,  GPIO_PIN_RESET);
-		}else if(ut4 < 0){
 			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_10, GPIO_PIN_RESET);
-			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_12, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_12,  GPIO_PIN_SET);
+		}else if(ut4 < 0){
+			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_10, GPIO_PIN_SET);
+			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_12, GPIO_PIN_RESET);
 		}else if(ut4 == 0){
 			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_10, GPIO_PIN_RESET);
 			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_12, GPIO_PIN_RESET);
