@@ -645,33 +645,32 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
  800089c:	f000 fd94 	bl	80013c8 <MX_GPIO_Init>
-  MX_DMA_Init();
- 80008a0:	f000 fd6a 	bl	8001378 <MX_DMA_Init>
   MX_TIM2_Init();
- 80008a4:	f000 f9bc 	bl	8000c20 <MX_TIM2_Init>
+ 80008a0:	f000 f9be 	bl	8000c20 <MX_TIM2_Init>
   MX_TIM3_Init();
- 80008a8:	f000 fa08 	bl	8000cbc <MX_TIM3_Init>
+ 80008a4:	f000 fa0a 	bl	8000cbc <MX_TIM3_Init>
   MX_TIM4_Init();
- 80008ac:	f000 fa5c 	bl	8000d68 <MX_TIM4_Init>
+ 80008a8:	f000 fa5e 	bl	8000d68 <MX_TIM4_Init>
   MX_TIM6_Init();
- 80008b0:	f000 fb12 	bl	8000ed8 <MX_TIM6_Init>
+ 80008ac:	f000 fb14 	bl	8000ed8 <MX_TIM6_Init>
   MX_TIM7_Init();
- 80008b4:	f000 fb50 	bl	8000f58 <MX_TIM7_Init>
+ 80008b0:	f000 fb52 	bl	8000f58 <MX_TIM7_Init>
   MX_TIM1_Init();
- 80008b8:	f000 f922 	bl	8000b00 <MX_TIM1_Init>
+ 80008b4:	f000 f924 	bl	8000b00 <MX_TIM1_Init>
   MX_TIM5_Init();
- 80008bc:	f000 fab0 	bl	8000e20 <MX_TIM5_Init>
+ 80008b8:	f000 fab2 	bl	8000e20 <MX_TIM5_Init>
   MX_TIM8_Init();
- 80008c0:	f000 fb80 	bl	8000fc4 <MX_TIM8_Init>
+ 80008bc:	f000 fb82 	bl	8000fc4 <MX_TIM8_Init>
   MX_TIM15_Init();
- 80008c4:	f000 fbd8 	bl	8001078 <MX_TIM15_Init>
+ 80008c0:	f000 fbda 	bl	8001078 <MX_TIM15_Init>
   MX_TIM23_Init();
- 80008c8:	f000 fc5e 	bl	8001188 <MX_TIM23_Init>
+ 80008c4:	f000 fc60 	bl	8001188 <MX_TIM23_Init>
   MX_TIM24_Init();
- 80008cc:	f000 fcb2 	bl	8001234 <MX_TIM24_Init>
+ 80008c8:	f000 fcb4 	bl	8001234 <MX_TIM24_Init>
   MX_USART3_UART_Init();
- 80008d0:	f000 fd06 	bl	80012e0 <MX_USART3_UART_Init>
-
+ 80008cc:	f000 fd08 	bl	80012e0 <MX_USART3_UART_Init>
+  MX_DMA_Init();
+ 80008d0:	f000 fd52 	bl	8001378 <MX_DMA_Init>
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_Base_Start_IT(&htim2);
@@ -2551,381 +2550,380 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
- 80013de:	4ba7      	ldr	r3, [pc, #668]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 80013de:	4ba8      	ldr	r3, [pc, #672]	; (8001680 <MX_GPIO_Init+0x2b8>)
  80013e0:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
- 80013e4:	4aa5      	ldr	r2, [pc, #660]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 80013e4:	4aa6      	ldr	r2, [pc, #664]	; (8001680 <MX_GPIO_Init+0x2b8>)
  80013e6:	f043 0310 	orr.w	r3, r3, #16
  80013ea:	f8c2 30e0 	str.w	r3, [r2, #224]	; 0xe0
- 80013ee:	4ba3      	ldr	r3, [pc, #652]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 80013ee:	4ba4      	ldr	r3, [pc, #656]	; (8001680 <MX_GPIO_Init+0x2b8>)
  80013f0:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
  80013f4:	f003 0310 	and.w	r3, r3, #16
  80013f8:	623b      	str	r3, [r7, #32]
  80013fa:	6a3b      	ldr	r3, [r7, #32]
   __HAL_RCC_GPIOC_CLK_ENABLE();
- 80013fc:	4b9f      	ldr	r3, [pc, #636]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 80013fc:	4ba0      	ldr	r3, [pc, #640]	; (8001680 <MX_GPIO_Init+0x2b8>)
  80013fe:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
- 8001402:	4a9e      	ldr	r2, [pc, #632]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 8001402:	4a9f      	ldr	r2, [pc, #636]	; (8001680 <MX_GPIO_Init+0x2b8>)
  8001404:	f043 0304 	orr.w	r3, r3, #4
  8001408:	f8c2 30e0 	str.w	r3, [r2, #224]	; 0xe0
- 800140c:	4b9b      	ldr	r3, [pc, #620]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 800140c:	4b9c      	ldr	r3, [pc, #624]	; (8001680 <MX_GPIO_Init+0x2b8>)
  800140e:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
  8001412:	f003 0304 	and.w	r3, r3, #4
  8001416:	61fb      	str	r3, [r7, #28]
  8001418:	69fb      	ldr	r3, [r7, #28]
   __HAL_RCC_GPIOF_CLK_ENABLE();
- 800141a:	4b98      	ldr	r3, [pc, #608]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 800141a:	4b99      	ldr	r3, [pc, #612]	; (8001680 <MX_GPIO_Init+0x2b8>)
  800141c:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
- 8001420:	4a96      	ldr	r2, [pc, #600]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 8001420:	4a97      	ldr	r2, [pc, #604]	; (8001680 <MX_GPIO_Init+0x2b8>)
  8001422:	f043 0320 	orr.w	r3, r3, #32
  8001426:	f8c2 30e0 	str.w	r3, [r2, #224]	; 0xe0
- 800142a:	4b94      	ldr	r3, [pc, #592]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 800142a:	4b95      	ldr	r3, [pc, #596]	; (8001680 <MX_GPIO_Init+0x2b8>)
  800142c:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
  8001430:	f003 0320 	and.w	r3, r3, #32
  8001434:	61bb      	str	r3, [r7, #24]
  8001436:	69bb      	ldr	r3, [r7, #24]
   __HAL_RCC_GPIOH_CLK_ENABLE();
- 8001438:	4b90      	ldr	r3, [pc, #576]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 8001438:	4b91      	ldr	r3, [pc, #580]	; (8001680 <MX_GPIO_Init+0x2b8>)
  800143a:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
- 800143e:	4a8f      	ldr	r2, [pc, #572]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 800143e:	4a90      	ldr	r2, [pc, #576]	; (8001680 <MX_GPIO_Init+0x2b8>)
  8001440:	f043 0380 	orr.w	r3, r3, #128	; 0x80
  8001444:	f8c2 30e0 	str.w	r3, [r2, #224]	; 0xe0
- 8001448:	4b8c      	ldr	r3, [pc, #560]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 8001448:	4b8d      	ldr	r3, [pc, #564]	; (8001680 <MX_GPIO_Init+0x2b8>)
  800144a:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
  800144e:	f003 0380 	and.w	r3, r3, #128	; 0x80
  8001452:	617b      	str	r3, [r7, #20]
  8001454:	697b      	ldr	r3, [r7, #20]
   __HAL_RCC_GPIOA_CLK_ENABLE();
- 8001456:	4b89      	ldr	r3, [pc, #548]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 8001456:	4b8a      	ldr	r3, [pc, #552]	; (8001680 <MX_GPIO_Init+0x2b8>)
  8001458:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
- 800145c:	4a87      	ldr	r2, [pc, #540]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 800145c:	4a88      	ldr	r2, [pc, #544]	; (8001680 <MX_GPIO_Init+0x2b8>)
  800145e:	f043 0301 	orr.w	r3, r3, #1
  8001462:	f8c2 30e0 	str.w	r3, [r2, #224]	; 0xe0
- 8001466:	4b85      	ldr	r3, [pc, #532]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 8001466:	4b86      	ldr	r3, [pc, #536]	; (8001680 <MX_GPIO_Init+0x2b8>)
  8001468:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
  800146c:	f003 0301 	and.w	r3, r3, #1
  8001470:	613b      	str	r3, [r7, #16]
  8001472:	693b      	ldr	r3, [r7, #16]
   __HAL_RCC_GPIOB_CLK_ENABLE();
- 8001474:	4b81      	ldr	r3, [pc, #516]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 8001474:	4b82      	ldr	r3, [pc, #520]	; (8001680 <MX_GPIO_Init+0x2b8>)
  8001476:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
- 800147a:	4a80      	ldr	r2, [pc, #512]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 800147a:	4a81      	ldr	r2, [pc, #516]	; (8001680 <MX_GPIO_Init+0x2b8>)
  800147c:	f043 0302 	orr.w	r3, r3, #2
  8001480:	f8c2 30e0 	str.w	r3, [r2, #224]	; 0xe0
- 8001484:	4b7d      	ldr	r3, [pc, #500]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 8001484:	4b7e      	ldr	r3, [pc, #504]	; (8001680 <MX_GPIO_Init+0x2b8>)
  8001486:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
  800148a:	f003 0302 	and.w	r3, r3, #2
  800148e:	60fb      	str	r3, [r7, #12]
  8001490:	68fb      	ldr	r3, [r7, #12]
   __HAL_RCC_GPIOG_CLK_ENABLE();
- 8001492:	4b7a      	ldr	r3, [pc, #488]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 8001492:	4b7b      	ldr	r3, [pc, #492]	; (8001680 <MX_GPIO_Init+0x2b8>)
  8001494:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
- 8001498:	4a78      	ldr	r2, [pc, #480]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 8001498:	4a79      	ldr	r2, [pc, #484]	; (8001680 <MX_GPIO_Init+0x2b8>)
  800149a:	f043 0340 	orr.w	r3, r3, #64	; 0x40
  800149e:	f8c2 30e0 	str.w	r3, [r2, #224]	; 0xe0
- 80014a2:	4b76      	ldr	r3, [pc, #472]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 80014a2:	4b77      	ldr	r3, [pc, #476]	; (8001680 <MX_GPIO_Init+0x2b8>)
  80014a4:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
  80014a8:	f003 0340 	and.w	r3, r3, #64	; 0x40
  80014ac:	60bb      	str	r3, [r7, #8]
  80014ae:	68bb      	ldr	r3, [r7, #8]
   __HAL_RCC_GPIOD_CLK_ENABLE();
- 80014b0:	4b72      	ldr	r3, [pc, #456]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 80014b0:	4b73      	ldr	r3, [pc, #460]	; (8001680 <MX_GPIO_Init+0x2b8>)
  80014b2:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
- 80014b6:	4a71      	ldr	r2, [pc, #452]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 80014b6:	4a72      	ldr	r2, [pc, #456]	; (8001680 <MX_GPIO_Init+0x2b8>)
  80014b8:	f043 0308 	orr.w	r3, r3, #8
  80014bc:	f8c2 30e0 	str.w	r3, [r2, #224]	; 0xe0
- 80014c0:	4b6e      	ldr	r3, [pc, #440]	; (800167c <MX_GPIO_Init+0x2b4>)
+ 80014c0:	4b6f      	ldr	r3, [pc, #444]	; (8001680 <MX_GPIO_Init+0x2b8>)
  80014c2:	f8d3 30e0 	ldr.w	r3, [r3, #224]	; 0xe0
  80014c6:	f003 0308 	and.w	r3, r3, #8
  80014ca:	607b      	str	r3, [r7, #4]
  80014cc:	687b      	ldr	r3, [r7, #4]
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOF, GPIO_PIN_2, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOF, GPIO_PIN_2|GPIO_PIN_10, GPIO_PIN_RESET);
  80014ce:	2200      	movs	r2, #0
- 80014d0:	2104      	movs	r1, #4
- 80014d2:	486b      	ldr	r0, [pc, #428]	; (8001680 <MX_GPIO_Init+0x2b8>)
- 80014d4:	f007 fc06 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 80014d0:	f240 4104 	movw	r1, #1028	; 0x404
+ 80014d4:	486b      	ldr	r0, [pc, #428]	; (8001684 <MX_GPIO_Init+0x2bc>)
+ 80014d6:	f007 fc05 	bl	8008ce4 <HAL_GPIO_WritePin>
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LED_GREEN_Pin|GPIO_PIN_2|LED_RED_Pin, GPIO_PIN_RESET);
- 80014d8:	2200      	movs	r2, #0
- 80014da:	f244 0105 	movw	r1, #16389	; 0x4005
- 80014de:	4869      	ldr	r0, [pc, #420]	; (8001684 <MX_GPIO_Init+0x2bc>)
- 80014e0:	f007 fc00 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 80014da:	2200      	movs	r2, #0
+ 80014dc:	f244 0105 	movw	r1, #16389	; 0x4005
+ 80014e0:	4869      	ldr	r0, [pc, #420]	; (8001688 <MX_GPIO_Init+0x2c0>)
+ 80014e2:	f007 fbff 	bl	8008ce4 <HAL_GPIO_WritePin>
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOG, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
- 80014e4:	2200      	movs	r2, #0
- 80014e6:	2103      	movs	r1, #3
- 80014e8:	4867      	ldr	r0, [pc, #412]	; (8001688 <MX_GPIO_Init+0x2c0>)
- 80014ea:	f007 fbfb 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 80014e6:	2200      	movs	r2, #0
+ 80014e8:	2103      	movs	r1, #3
+ 80014ea:	4868      	ldr	r0, [pc, #416]	; (800168c <MX_GPIO_Init+0x2c4>)
+ 80014ec:	f007 fbfa 	bl	8008ce4 <HAL_GPIO_WritePin>
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOE, GPIO_PIN_10|GPIO_PIN_12|LED_YELLOW_Pin, GPIO_PIN_RESET);
- 80014ee:	2200      	movs	r2, #0
- 80014f0:	f241 4102 	movw	r1, #5122	; 0x1402
- 80014f4:	4865      	ldr	r0, [pc, #404]	; (800168c <MX_GPIO_Init+0x2c4>)
- 80014f6:	f007 fbf5 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 80014f0:	2200      	movs	r2, #0
+ 80014f2:	f241 4102 	movw	r1, #5122	; 0x1402
+ 80014f6:	4866      	ldr	r0, [pc, #408]	; (8001690 <MX_GPIO_Init+0x2c8>)
+ 80014f8:	f007 fbf4 	bl	8008ce4 <HAL_GPIO_WritePin>
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, USB_FS_PWR_EN_Pin|GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
- 80014fa:	2200      	movs	r2, #0
- 80014fc:	f240 4103 	movw	r1, #1027	; 0x403
- 8001500:	4863      	ldr	r0, [pc, #396]	; (8001690 <MX_GPIO_Init+0x2c8>)
- 8001502:	f007 fbef 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 80014fc:	2200      	movs	r2, #0
+ 80014fe:	f240 4103 	movw	r1, #1027	; 0x403
+ 8001502:	4864      	ldr	r0, [pc, #400]	; (8001694 <MX_GPIO_Init+0x2cc>)
+ 8001504:	f007 fbee 	bl	8008ce4 <HAL_GPIO_WritePin>
 
   /*Configure GPIO pin : B1_Pin */
   GPIO_InitStruct.Pin = B1_Pin;
- 8001506:	f44f 5300 	mov.w	r3, #8192	; 0x2000
- 800150a:	627b      	str	r3, [r7, #36]	; 0x24
+ 8001508:	f44f 5300 	mov.w	r3, #8192	; 0x2000
+ 800150c:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
- 800150c:	2300      	movs	r3, #0
- 800150e:	62bb      	str	r3, [r7, #40]	; 0x28
+ 800150e:	2300      	movs	r3, #0
+ 8001510:	62bb      	str	r3, [r7, #40]	; 0x28
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 8001510:	2300      	movs	r3, #0
- 8001512:	62fb      	str	r3, [r7, #44]	; 0x2c
+ 8001512:	2300      	movs	r3, #0
+ 8001514:	62fb      	str	r3, [r7, #44]	; 0x2c
   HAL_GPIO_Init(B1_GPIO_Port, &GPIO_InitStruct);
- 8001514:	f107 0324 	add.w	r3, r7, #36	; 0x24
- 8001518:	4619      	mov	r1, r3
- 800151a:	485e      	ldr	r0, [pc, #376]	; (8001694 <MX_GPIO_Init+0x2cc>)
- 800151c:	f007 fa3a 	bl	8008994 <HAL_GPIO_Init>
+ 8001516:	f107 0324 	add.w	r3, r7, #36	; 0x24
+ 800151a:	4619      	mov	r1, r3
+ 800151c:	485e      	ldr	r0, [pc, #376]	; (8001698 <MX_GPIO_Init+0x2d0>)
+ 800151e:	f007 fa39 	bl	8008994 <HAL_GPIO_Init>
 
-  /*Configure GPIO pin : PF2 */
-  GPIO_InitStruct.Pin = GPIO_PIN_2;
- 8001520:	2304      	movs	r3, #4
- 8001522:	627b      	str	r3, [r7, #36]	; 0x24
+  /*Configure GPIO pins : PF2 PF10 */
+  GPIO_InitStruct.Pin = GPIO_PIN_2|GPIO_PIN_10;
+ 8001522:	f240 4304 	movw	r3, #1028	; 0x404
+ 8001526:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 8001524:	2301      	movs	r3, #1
- 8001526:	62bb      	str	r3, [r7, #40]	; 0x28
+ 8001528:	2301      	movs	r3, #1
+ 800152a:	62bb      	str	r3, [r7, #40]	; 0x28
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 8001528:	2300      	movs	r3, #0
- 800152a:	62fb      	str	r3, [r7, #44]	; 0x2c
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  800152c:	2300      	movs	r3, #0
- 800152e:	633b      	str	r3, [r7, #48]	; 0x30
+ 800152e:	62fb      	str	r3, [r7, #44]	; 0x2c
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 8001530:	2300      	movs	r3, #0
+ 8001532:	633b      	str	r3, [r7, #48]	; 0x30
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
- 8001530:	f107 0324 	add.w	r3, r7, #36	; 0x24
- 8001534:	4619      	mov	r1, r3
- 8001536:	4852      	ldr	r0, [pc, #328]	; (8001680 <MX_GPIO_Init+0x2b8>)
- 8001538:	f007 fa2c 	bl	8008994 <HAL_GPIO_Init>
+ 8001534:	f107 0324 	add.w	r3, r7, #36	; 0x24
+ 8001538:	4619      	mov	r1, r3
+ 800153a:	4852      	ldr	r0, [pc, #328]	; (8001684 <MX_GPIO_Init+0x2bc>)
+ 800153c:	f007 fa2a 	bl	8008994 <HAL_GPIO_Init>
 
   /*Configure GPIO pins : RMII_MDC_Pin RMII_RXD0_Pin RMII_RXD1_Pin */
   GPIO_InitStruct.Pin = RMII_MDC_Pin|RMII_RXD0_Pin|RMII_RXD1_Pin;
- 800153c:	2332      	movs	r3, #50	; 0x32
- 800153e:	627b      	str	r3, [r7, #36]	; 0x24
+ 8001540:	2332      	movs	r3, #50	; 0x32
+ 8001542:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
- 8001540:	2302      	movs	r3, #2
- 8001542:	62bb      	str	r3, [r7, #40]	; 0x28
+ 8001544:	2302      	movs	r3, #2
+ 8001546:	62bb      	str	r3, [r7, #40]	; 0x28
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 8001544:	2300      	movs	r3, #0
- 8001546:	62fb      	str	r3, [r7, #44]	; 0x2c
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  8001548:	2300      	movs	r3, #0
- 800154a:	633b      	str	r3, [r7, #48]	; 0x30
+ 800154a:	62fb      	str	r3, [r7, #44]	; 0x2c
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 800154c:	2300      	movs	r3, #0
+ 800154e:	633b      	str	r3, [r7, #48]	; 0x30
   GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
- 800154c:	230b      	movs	r3, #11
- 800154e:	637b      	str	r3, [r7, #52]	; 0x34
+ 8001550:	230b      	movs	r3, #11
+ 8001552:	637b      	str	r3, [r7, #52]	; 0x34
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
- 8001550:	f107 0324 	add.w	r3, r7, #36	; 0x24
- 8001554:	4619      	mov	r1, r3
- 8001556:	484f      	ldr	r0, [pc, #316]	; (8001694 <MX_GPIO_Init+0x2cc>)
- 8001558:	f007 fa1c 	bl	8008994 <HAL_GPIO_Init>
+ 8001554:	f107 0324 	add.w	r3, r7, #36	; 0x24
+ 8001558:	4619      	mov	r1, r3
+ 800155a:	484f      	ldr	r0, [pc, #316]	; (8001698 <MX_GPIO_Init+0x2d0>)
+ 800155c:	f007 fa1a 	bl	8008994 <HAL_GPIO_Init>
 
   /*Configure GPIO pins : RMII_REF_CLK_Pin RMII_MDIO_Pin RMII_CRS_DV_Pin */
   GPIO_InitStruct.Pin = RMII_REF_CLK_Pin|RMII_MDIO_Pin|RMII_CRS_DV_Pin;
- 800155c:	2386      	movs	r3, #134	; 0x86
- 800155e:	627b      	str	r3, [r7, #36]	; 0x24
+ 8001560:	2386      	movs	r3, #134	; 0x86
+ 8001562:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
- 8001560:	2302      	movs	r3, #2
- 8001562:	62bb      	str	r3, [r7, #40]	; 0x28
+ 8001564:	2302      	movs	r3, #2
+ 8001566:	62bb      	str	r3, [r7, #40]	; 0x28
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 8001564:	2300      	movs	r3, #0
- 8001566:	62fb      	str	r3, [r7, #44]	; 0x2c
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  8001568:	2300      	movs	r3, #0
- 800156a:	633b      	str	r3, [r7, #48]	; 0x30
+ 800156a:	62fb      	str	r3, [r7, #44]	; 0x2c
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 800156c:	2300      	movs	r3, #0
+ 800156e:	633b      	str	r3, [r7, #48]	; 0x30
   GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
- 800156c:	230b      	movs	r3, #11
- 800156e:	637b      	str	r3, [r7, #52]	; 0x34
+ 8001570:	230b      	movs	r3, #11
+ 8001572:	637b      	str	r3, [r7, #52]	; 0x34
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
- 8001570:	f107 0324 	add.w	r3, r7, #36	; 0x24
- 8001574:	4619      	mov	r1, r3
- 8001576:	4848      	ldr	r0, [pc, #288]	; (8001698 <MX_GPIO_Init+0x2d0>)
- 8001578:	f007 fa0c 	bl	8008994 <HAL_GPIO_Init>
+ 8001574:	f107 0324 	add.w	r3, r7, #36	; 0x24
+ 8001578:	4619      	mov	r1, r3
+ 800157a:	4848      	ldr	r0, [pc, #288]	; (800169c <MX_GPIO_Init+0x2d4>)
+ 800157c:	f007 fa0a 	bl	8008994 <HAL_GPIO_Init>
 
   /*Configure GPIO pins : LED_GREEN_Pin PB2 LED_RED_Pin */
   GPIO_InitStruct.Pin = LED_GREEN_Pin|GPIO_PIN_2|LED_RED_Pin;
- 800157c:	f244 0305 	movw	r3, #16389	; 0x4005
- 8001580:	627b      	str	r3, [r7, #36]	; 0x24
+ 8001580:	f244 0305 	movw	r3, #16389	; 0x4005
+ 8001584:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 8001582:	2301      	movs	r3, #1
- 8001584:	62bb      	str	r3, [r7, #40]	; 0x28
+ 8001586:	2301      	movs	r3, #1
+ 8001588:	62bb      	str	r3, [r7, #40]	; 0x28
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 8001586:	2300      	movs	r3, #0
- 8001588:	62fb      	str	r3, [r7, #44]	; 0x2c
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  800158a:	2300      	movs	r3, #0
- 800158c:	633b      	str	r3, [r7, #48]	; 0x30
+ 800158c:	62fb      	str	r3, [r7, #44]	; 0x2c
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 800158e:	2300      	movs	r3, #0
+ 8001590:	633b      	str	r3, [r7, #48]	; 0x30
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
- 800158e:	f107 0324 	add.w	r3, r7, #36	; 0x24
- 8001592:	4619      	mov	r1, r3
- 8001594:	483b      	ldr	r0, [pc, #236]	; (8001684 <MX_GPIO_Init+0x2bc>)
- 8001596:	f007 f9fd 	bl	8008994 <HAL_GPIO_Init>
+ 8001592:	f107 0324 	add.w	r3, r7, #36	; 0x24
+ 8001596:	4619      	mov	r1, r3
+ 8001598:	483b      	ldr	r0, [pc, #236]	; (8001688 <MX_GPIO_Init+0x2c0>)
+ 800159a:	f007 f9fb 	bl	8008994 <HAL_GPIO_Init>
 
   /*Configure GPIO pins : PG0 PG1 */
   GPIO_InitStruct.Pin = GPIO_PIN_0|GPIO_PIN_1;
- 800159a:	2303      	movs	r3, #3
- 800159c:	627b      	str	r3, [r7, #36]	; 0x24
+ 800159e:	2303      	movs	r3, #3
+ 80015a0:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 800159e:	2301      	movs	r3, #1
- 80015a0:	62bb      	str	r3, [r7, #40]	; 0x28
+ 80015a2:	2301      	movs	r3, #1
+ 80015a4:	62bb      	str	r3, [r7, #40]	; 0x28
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 80015a2:	2300      	movs	r3, #0
- 80015a4:	62fb      	str	r3, [r7, #44]	; 0x2c
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  80015a6:	2300      	movs	r3, #0
- 80015a8:	633b      	str	r3, [r7, #48]	; 0x30
+ 80015a8:	62fb      	str	r3, [r7, #44]	; 0x2c
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 80015aa:	2300      	movs	r3, #0
+ 80015ac:	633b      	str	r3, [r7, #48]	; 0x30
   HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
- 80015aa:	f107 0324 	add.w	r3, r7, #36	; 0x24
- 80015ae:	4619      	mov	r1, r3
- 80015b0:	4835      	ldr	r0, [pc, #212]	; (8001688 <MX_GPIO_Init+0x2c0>)
- 80015b2:	f007 f9ef 	bl	8008994 <HAL_GPIO_Init>
+ 80015ae:	f107 0324 	add.w	r3, r7, #36	; 0x24
+ 80015b2:	4619      	mov	r1, r3
+ 80015b4:	4835      	ldr	r0, [pc, #212]	; (800168c <MX_GPIO_Init+0x2c4>)
+ 80015b6:	f007 f9ed 	bl	8008994 <HAL_GPIO_Init>
 
   /*Configure GPIO pins : PE10 PE12 LED_YELLOW_Pin */
   GPIO_InitStruct.Pin = GPIO_PIN_10|GPIO_PIN_12|LED_YELLOW_Pin;
- 80015b6:	f241 4302 	movw	r3, #5122	; 0x1402
- 80015ba:	627b      	str	r3, [r7, #36]	; 0x24
+ 80015ba:	f241 4302 	movw	r3, #5122	; 0x1402
+ 80015be:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 80015bc:	2301      	movs	r3, #1
- 80015be:	62bb      	str	r3, [r7, #40]	; 0x28
+ 80015c0:	2301      	movs	r3, #1
+ 80015c2:	62bb      	str	r3, [r7, #40]	; 0x28
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 80015c0:	2300      	movs	r3, #0
- 80015c2:	62fb      	str	r3, [r7, #44]	; 0x2c
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  80015c4:	2300      	movs	r3, #0
- 80015c6:	633b      	str	r3, [r7, #48]	; 0x30
+ 80015c6:	62fb      	str	r3, [r7, #44]	; 0x2c
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 80015c8:	2300      	movs	r3, #0
+ 80015ca:	633b      	str	r3, [r7, #48]	; 0x30
   HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
- 80015c8:	f107 0324 	add.w	r3, r7, #36	; 0x24
- 80015cc:	4619      	mov	r1, r3
- 80015ce:	482f      	ldr	r0, [pc, #188]	; (800168c <MX_GPIO_Init+0x2c4>)
- 80015d0:	f007 f9e0 	bl	8008994 <HAL_GPIO_Init>
+ 80015cc:	f107 0324 	add.w	r3, r7, #36	; 0x24
+ 80015d0:	4619      	mov	r1, r3
+ 80015d2:	482f      	ldr	r0, [pc, #188]	; (8001690 <MX_GPIO_Init+0x2c8>)
+ 80015d4:	f007 f9de 	bl	8008994 <HAL_GPIO_Init>
 
   /*Configure GPIO pin : RMII_TXD1_Pin */
   GPIO_InitStruct.Pin = RMII_TXD1_Pin;
- 80015d4:	f44f 5300 	mov.w	r3, #8192	; 0x2000
- 80015d8:	627b      	str	r3, [r7, #36]	; 0x24
+ 80015d8:	f44f 5300 	mov.w	r3, #8192	; 0x2000
+ 80015dc:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
- 80015da:	2302      	movs	r3, #2
- 80015dc:	62bb      	str	r3, [r7, #40]	; 0x28
+ 80015de:	2302      	movs	r3, #2
+ 80015e0:	62bb      	str	r3, [r7, #40]	; 0x28
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 80015de:	2300      	movs	r3, #0
- 80015e0:	62fb      	str	r3, [r7, #44]	; 0x2c
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  80015e2:	2300      	movs	r3, #0
- 80015e4:	633b      	str	r3, [r7, #48]	; 0x30
+ 80015e4:	62fb      	str	r3, [r7, #44]	; 0x2c
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 80015e6:	2300      	movs	r3, #0
+ 80015e8:	633b      	str	r3, [r7, #48]	; 0x30
   GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
- 80015e6:	230b      	movs	r3, #11
- 80015e8:	637b      	str	r3, [r7, #52]	; 0x34
+ 80015ea:	230b      	movs	r3, #11
+ 80015ec:	637b      	str	r3, [r7, #52]	; 0x34
   HAL_GPIO_Init(RMII_TXD1_GPIO_Port, &GPIO_InitStruct);
- 80015ea:	f107 0324 	add.w	r3, r7, #36	; 0x24
- 80015ee:	4619      	mov	r1, r3
- 80015f0:	4824      	ldr	r0, [pc, #144]	; (8001684 <MX_GPIO_Init+0x2bc>)
- 80015f2:	f007 f9cf 	bl	8008994 <HAL_GPIO_Init>
+ 80015ee:	f107 0324 	add.w	r3, r7, #36	; 0x24
+ 80015f2:	4619      	mov	r1, r3
+ 80015f4:	4824      	ldr	r0, [pc, #144]	; (8001688 <MX_GPIO_Init+0x2c0>)
+ 80015f6:	f007 f9cd 	bl	8008994 <HAL_GPIO_Init>
 
   /*Configure GPIO pins : USB_FS_PWR_EN_Pin PD0 PD1 */
   GPIO_InitStruct.Pin = USB_FS_PWR_EN_Pin|GPIO_PIN_0|GPIO_PIN_1;
- 80015f6:	f240 4303 	movw	r3, #1027	; 0x403
- 80015fa:	627b      	str	r3, [r7, #36]	; 0x24
+ 80015fa:	f240 4303 	movw	r3, #1027	; 0x403
+ 80015fe:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
- 80015fc:	2301      	movs	r3, #1
- 80015fe:	62bb      	str	r3, [r7, #40]	; 0x28
+ 8001600:	2301      	movs	r3, #1
+ 8001602:	62bb      	str	r3, [r7, #40]	; 0x28
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 8001600:	2300      	movs	r3, #0
- 8001602:	62fb      	str	r3, [r7, #44]	; 0x2c
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  8001604:	2300      	movs	r3, #0
- 8001606:	633b      	str	r3, [r7, #48]	; 0x30
+ 8001606:	62fb      	str	r3, [r7, #44]	; 0x2c
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 8001608:	2300      	movs	r3, #0
+ 800160a:	633b      	str	r3, [r7, #48]	; 0x30
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
- 8001608:	f107 0324 	add.w	r3, r7, #36	; 0x24
- 800160c:	4619      	mov	r1, r3
- 800160e:	4820      	ldr	r0, [pc, #128]	; (8001690 <MX_GPIO_Init+0x2c8>)
- 8001610:	f007 f9c0 	bl	8008994 <HAL_GPIO_Init>
+ 800160c:	f107 0324 	add.w	r3, r7, #36	; 0x24
+ 8001610:	4619      	mov	r1, r3
+ 8001612:	4820      	ldr	r0, [pc, #128]	; (8001694 <MX_GPIO_Init+0x2cc>)
+ 8001614:	f007 f9be 	bl	8008994 <HAL_GPIO_Init>
 
   /*Configure GPIO pin : USB_FS_OVCR_Pin */
   GPIO_InitStruct.Pin = USB_FS_OVCR_Pin;
- 8001614:	2380      	movs	r3, #128	; 0x80
- 8001616:	627b      	str	r3, [r7, #36]	; 0x24
+ 8001618:	2380      	movs	r3, #128	; 0x80
+ 800161a:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
- 8001618:	f44f 1388 	mov.w	r3, #1114112	; 0x110000
- 800161c:	62bb      	str	r3, [r7, #40]	; 0x28
+ 800161c:	f44f 1388 	mov.w	r3, #1114112	; 0x110000
+ 8001620:	62bb      	str	r3, [r7, #40]	; 0x28
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 800161e:	2300      	movs	r3, #0
- 8001620:	62fb      	str	r3, [r7, #44]	; 0x2c
+ 8001622:	2300      	movs	r3, #0
+ 8001624:	62fb      	str	r3, [r7, #44]	; 0x2c
   HAL_GPIO_Init(USB_FS_OVCR_GPIO_Port, &GPIO_InitStruct);
- 8001622:	f107 0324 	add.w	r3, r7, #36	; 0x24
- 8001626:	4619      	mov	r1, r3
- 8001628:	4817      	ldr	r0, [pc, #92]	; (8001688 <MX_GPIO_Init+0x2c0>)
- 800162a:	f007 f9b3 	bl	8008994 <HAL_GPIO_Init>
+ 8001626:	f107 0324 	add.w	r3, r7, #36	; 0x24
+ 800162a:	4619      	mov	r1, r3
+ 800162c:	4817      	ldr	r0, [pc, #92]	; (800168c <MX_GPIO_Init+0x2c4>)
+ 800162e:	f007 f9b1 	bl	8008994 <HAL_GPIO_Init>
 
   /*Configure GPIO pin : USB_FS_ID_Pin */
   GPIO_InitStruct.Pin = USB_FS_ID_Pin;
- 800162e:	f44f 6380 	mov.w	r3, #1024	; 0x400
- 8001632:	627b      	str	r3, [r7, #36]	; 0x24
+ 8001632:	f44f 6380 	mov.w	r3, #1024	; 0x400
+ 8001636:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
- 8001634:	2302      	movs	r3, #2
- 8001636:	62bb      	str	r3, [r7, #40]	; 0x28
+ 8001638:	2302      	movs	r3, #2
+ 800163a:	62bb      	str	r3, [r7, #40]	; 0x28
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 8001638:	2300      	movs	r3, #0
- 800163a:	62fb      	str	r3, [r7, #44]	; 0x2c
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  800163c:	2300      	movs	r3, #0
- 800163e:	633b      	str	r3, [r7, #48]	; 0x30
+ 800163e:	62fb      	str	r3, [r7, #44]	; 0x2c
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 8001640:	2300      	movs	r3, #0
+ 8001642:	633b      	str	r3, [r7, #48]	; 0x30
   GPIO_InitStruct.Alternate = GPIO_AF10_OTG1_HS;
- 8001640:	230a      	movs	r3, #10
- 8001642:	637b      	str	r3, [r7, #52]	; 0x34
+ 8001644:	230a      	movs	r3, #10
+ 8001646:	637b      	str	r3, [r7, #52]	; 0x34
   HAL_GPIO_Init(USB_FS_ID_GPIO_Port, &GPIO_InitStruct);
- 8001644:	f107 0324 	add.w	r3, r7, #36	; 0x24
- 8001648:	4619      	mov	r1, r3
- 800164a:	4813      	ldr	r0, [pc, #76]	; (8001698 <MX_GPIO_Init+0x2d0>)
- 800164c:	f007 f9a2 	bl	8008994 <HAL_GPIO_Init>
+ 8001648:	f107 0324 	add.w	r3, r7, #36	; 0x24
+ 800164c:	4619      	mov	r1, r3
+ 800164e:	4813      	ldr	r0, [pc, #76]	; (800169c <MX_GPIO_Init+0x2d4>)
+ 8001650:	f007 f9a0 	bl	8008994 <HAL_GPIO_Init>
 
   /*Configure GPIO pins : RMII_TX_EN_Pin RMII_TXD0_Pin */
   GPIO_InitStruct.Pin = RMII_TX_EN_Pin|RMII_TXD0_Pin;
- 8001650:	f44f 5320 	mov.w	r3, #10240	; 0x2800
- 8001654:	627b      	str	r3, [r7, #36]	; 0x24
+ 8001654:	f44f 5320 	mov.w	r3, #10240	; 0x2800
+ 8001658:	627b      	str	r3, [r7, #36]	; 0x24
   GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
- 8001656:	2302      	movs	r3, #2
- 8001658:	62bb      	str	r3, [r7, #40]	; 0x28
+ 800165a:	2302      	movs	r3, #2
+ 800165c:	62bb      	str	r3, [r7, #40]	; 0x28
   GPIO_InitStruct.Pull = GPIO_NOPULL;
- 800165a:	2300      	movs	r3, #0
- 800165c:	62fb      	str	r3, [r7, #44]	; 0x2c
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  800165e:	2300      	movs	r3, #0
- 8001660:	633b      	str	r3, [r7, #48]	; 0x30
+ 8001660:	62fb      	str	r3, [r7, #44]	; 0x2c
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 8001662:	2300      	movs	r3, #0
+ 8001664:	633b      	str	r3, [r7, #48]	; 0x30
   GPIO_InitStruct.Alternate = GPIO_AF11_ETH;
- 8001662:	230b      	movs	r3, #11
- 8001664:	637b      	str	r3, [r7, #52]	; 0x34
+ 8001666:	230b      	movs	r3, #11
+ 8001668:	637b      	str	r3, [r7, #52]	; 0x34
   HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
- 8001666:	f107 0324 	add.w	r3, r7, #36	; 0x24
- 800166a:	4619      	mov	r1, r3
- 800166c:	4806      	ldr	r0, [pc, #24]	; (8001688 <MX_GPIO_Init+0x2c0>)
- 800166e:	f007 f991 	bl	8008994 <HAL_GPIO_Init>
+ 800166a:	f107 0324 	add.w	r3, r7, #36	; 0x24
+ 800166e:	4619      	mov	r1, r3
+ 8001670:	4806      	ldr	r0, [pc, #24]	; (800168c <MX_GPIO_Init+0x2c4>)
+ 8001672:	f007 f98f 	bl	8008994 <HAL_GPIO_Init>
 
 }
- 8001672:	bf00      	nop
- 8001674:	3738      	adds	r7, #56	; 0x38
- 8001676:	46bd      	mov	sp, r7
- 8001678:	bd80      	pop	{r7, pc}
- 800167a:	bf00      	nop
- 800167c:	58024400 	.word	0x58024400
- 8001680:	58021400 	.word	0x58021400
- 8001684:	58020400 	.word	0x58020400
- 8001688:	58021800 	.word	0x58021800
- 800168c:	58021000 	.word	0x58021000
- 8001690:	58020c00 	.word	0x58020c00
- 8001694:	58020800 	.word	0x58020800
- 8001698:	58020000 	.word	0x58020000
- 800169c:	00000000 	.word	0x00000000
+ 8001676:	bf00      	nop
+ 8001678:	3738      	adds	r7, #56	; 0x38
+ 800167a:	46bd      	mov	sp, r7
+ 800167c:	bd80      	pop	{r7, pc}
+ 800167e:	bf00      	nop
+ 8001680:	58024400 	.word	0x58024400
+ 8001684:	58021400 	.word	0x58021400
+ 8001688:	58020400 	.word	0x58020400
+ 800168c:	58021800 	.word	0x58021800
+ 8001690:	58021000 	.word	0x58021000
+ 8001694:	58020c00 	.word	0x58020c00
+ 8001698:	58020800 	.word	0x58020800
+ 800169c:	58020000 	.word	0x58020000
 
 080016a0 <HAL_TIM_PeriodElapsedCallback>:
 		HAL_GPIO_WritePin(GPIOG, GPIO_PIN_6, GPIO_PIN_RESET);
@@ -2942,7 +2940,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  80016a8:	687b      	ldr	r3, [r7, #4]
  80016aa:	681b      	ldr	r3, [r3, #0]
  80016ac:	f1b3 4f80 	cmp.w	r3, #1073741824	; 0x40000000
- 80016b0:	f040 8486 	bne.w	8001fc0 <HAL_TIM_PeriodElapsedCallback+0x920>
+ 80016b0:	f040 8484 	bne.w	8001fbc <HAL_TIM_PeriodElapsedCallback+0x91c>
 
 		SP1 = 1/r * (get_vel_x - get_vel_y - (lx + ly) * get_vel_z); // fl
  80016b4:	4bc4      	ldr	r3, [pc, #784]	; (80019c8 <HAL_TIM_PeriodElapsedCallback+0x328>)
@@ -3416,176 +3414,174 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  8001bc2:	ed93 7b00 	vldr	d7, [r3]
  8001bc6:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
  8001bca:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001bce:	dd0a      	ble.n	8001be6 <HAL_TIM_PeriodElapsedCallback+0x546>
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_SET);
+ 8001bce:	dd0b      	ble.n	8001be8 <HAL_TIM_PeriodElapsedCallback+0x548>
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_SET);
  8001bd0:	2201      	movs	r2, #1
- 8001bd2:	2104      	movs	r1, #4
- 8001bd4:	4868      	ldr	r0, [pc, #416]	; (8001d78 <HAL_TIM_PeriodElapsedCallback+0x6d8>)
- 8001bd6:	f007 f885 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001bd2:	f44f 6180 	mov.w	r1, #1024	; 0x400
+ 8001bd6:	4868      	ldr	r0, [pc, #416]	; (8001d78 <HAL_TIM_PeriodElapsedCallback+0x6d8>)
+ 8001bd8:	f007 f884 	bl	8008ce4 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_2, GPIO_PIN_RESET);
- 8001bda:	2200      	movs	r2, #0
- 8001bdc:	2104      	movs	r1, #4
- 8001bde:	4867      	ldr	r0, [pc, #412]	; (8001d7c <HAL_TIM_PeriodElapsedCallback+0x6dc>)
- 8001be0:	f007 f880 	bl	8008ce4 <HAL_GPIO_WritePin>
- 8001be4:	e024      	b.n	8001c30 <HAL_TIM_PeriodElapsedCallback+0x590>
+ 8001bdc:	2200      	movs	r2, #0
+ 8001bde:	2104      	movs	r1, #4
+ 8001be0:	4865      	ldr	r0, [pc, #404]	; (8001d78 <HAL_TIM_PeriodElapsedCallback+0x6d8>)
+ 8001be2:	f007 f87f 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001be6:	e026      	b.n	8001c36 <HAL_TIM_PeriodElapsedCallback+0x596>
 		}else if(ut1 < 0){
- 8001be6:	4b60      	ldr	r3, [pc, #384]	; (8001d68 <HAL_TIM_PeriodElapsedCallback+0x6c8>)
- 8001be8:	ed93 7b00 	vldr	d7, [r3]
- 8001bec:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
- 8001bf0:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001bf4:	d50a      	bpl.n	8001c0c <HAL_TIM_PeriodElapsedCallback+0x56c>
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_RESET);
- 8001bf6:	2200      	movs	r2, #0
- 8001bf8:	2104      	movs	r1, #4
- 8001bfa:	485f      	ldr	r0, [pc, #380]	; (8001d78 <HAL_TIM_PeriodElapsedCallback+0x6d8>)
- 8001bfc:	f007 f872 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001be8:	4b5f      	ldr	r3, [pc, #380]	; (8001d68 <HAL_TIM_PeriodElapsedCallback+0x6c8>)
+ 8001bea:	ed93 7b00 	vldr	d7, [r3]
+ 8001bee:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
+ 8001bf2:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001bf6:	d50b      	bpl.n	8001c10 <HAL_TIM_PeriodElapsedCallback+0x570>
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET);
+ 8001bf8:	2200      	movs	r2, #0
+ 8001bfa:	f44f 6180 	mov.w	r1, #1024	; 0x400
+ 8001bfe:	485e      	ldr	r0, [pc, #376]	; (8001d78 <HAL_TIM_PeriodElapsedCallback+0x6d8>)
+ 8001c00:	f007 f870 	bl	8008ce4 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_2, GPIO_PIN_SET);
- 8001c00:	2201      	movs	r2, #1
- 8001c02:	2104      	movs	r1, #4
- 8001c04:	485d      	ldr	r0, [pc, #372]	; (8001d7c <HAL_TIM_PeriodElapsedCallback+0x6dc>)
- 8001c06:	f007 f86d 	bl	8008ce4 <HAL_GPIO_WritePin>
- 8001c0a:	e011      	b.n	8001c30 <HAL_TIM_PeriodElapsedCallback+0x590>
+ 8001c04:	2201      	movs	r2, #1
+ 8001c06:	2104      	movs	r1, #4
+ 8001c08:	485b      	ldr	r0, [pc, #364]	; (8001d78 <HAL_TIM_PeriodElapsedCallback+0x6d8>)
+ 8001c0a:	f007 f86b 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001c0e:	e012      	b.n	8001c36 <HAL_TIM_PeriodElapsedCallback+0x596>
 		}else if(ut1 == 0){
- 8001c0c:	4b56      	ldr	r3, [pc, #344]	; (8001d68 <HAL_TIM_PeriodElapsedCallback+0x6c8>)
- 8001c0e:	ed93 7b00 	vldr	d7, [r3]
- 8001c12:	eeb5 7b40 	vcmp.f64	d7, #0.0
- 8001c16:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001c1a:	d109      	bne.n	8001c30 <HAL_TIM_PeriodElapsedCallback+0x590>
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_2, GPIO_PIN_RESET);
- 8001c1c:	2200      	movs	r2, #0
- 8001c1e:	2104      	movs	r1, #4
- 8001c20:	4855      	ldr	r0, [pc, #340]	; (8001d78 <HAL_TIM_PeriodElapsedCallback+0x6d8>)
- 8001c22:	f007 f85f 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001c10:	4b55      	ldr	r3, [pc, #340]	; (8001d68 <HAL_TIM_PeriodElapsedCallback+0x6c8>)
+ 8001c12:	ed93 7b00 	vldr	d7, [r3]
+ 8001c16:	eeb5 7b40 	vcmp.f64	d7, #0.0
+ 8001c1a:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001c1e:	d10a      	bne.n	8001c36 <HAL_TIM_PeriodElapsedCallback+0x596>
+			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_10, GPIO_PIN_RESET);
+ 8001c20:	2200      	movs	r2, #0
+ 8001c22:	f44f 6180 	mov.w	r1, #1024	; 0x400
+ 8001c26:	4854      	ldr	r0, [pc, #336]	; (8001d78 <HAL_TIM_PeriodElapsedCallback+0x6d8>)
+ 8001c28:	f007 f85c 	bl	8008ce4 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(GPIOF, GPIO_PIN_2, GPIO_PIN_RESET);
- 8001c26:	2200      	movs	r2, #0
- 8001c28:	2104      	movs	r1, #4
- 8001c2a:	4854      	ldr	r0, [pc, #336]	; (8001d7c <HAL_TIM_PeriodElapsedCallback+0x6dc>)
- 8001c2c:	f007 f85a 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001c2c:	2200      	movs	r2, #0
+ 8001c2e:	2104      	movs	r1, #4
+ 8001c30:	4851      	ldr	r0, [pc, #324]	; (8001d78 <HAL_TIM_PeriodElapsedCallback+0x6d8>)
+ 8001c32:	f007 f857 	bl	8008ce4 <HAL_GPIO_WritePin>
 		}
 
 		if(ut2 > 0){
- 8001c30:	4b50      	ldr	r3, [pc, #320]	; (8001d74 <HAL_TIM_PeriodElapsedCallback+0x6d4>)
- 8001c32:	ed93 7b00 	vldr	d7, [r3]
- 8001c36:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
- 8001c3a:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001c3e:	dd0a      	ble.n	8001c56 <HAL_TIM_PeriodElapsedCallback+0x5b6>
-			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_0, GPIO_PIN_SET);
- 8001c40:	2201      	movs	r2, #1
- 8001c42:	2101      	movs	r1, #1
- 8001c44:	484e      	ldr	r0, [pc, #312]	; (8001d80 <HAL_TIM_PeriodElapsedCallback+0x6e0>)
- 8001c46:	f007 f84d 	bl	8008ce4 <HAL_GPIO_WritePin>
-			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_1, GPIO_PIN_RESET);
- 8001c4a:	2200      	movs	r2, #0
- 8001c4c:	2102      	movs	r1, #2
- 8001c4e:	484c      	ldr	r0, [pc, #304]	; (8001d80 <HAL_TIM_PeriodElapsedCallback+0x6e0>)
- 8001c50:	f007 f848 	bl	8008ce4 <HAL_GPIO_WritePin>
- 8001c54:	e024      	b.n	8001ca0 <HAL_TIM_PeriodElapsedCallback+0x600>
-		}else if(ut2 < 0){
- 8001c56:	4b47      	ldr	r3, [pc, #284]	; (8001d74 <HAL_TIM_PeriodElapsedCallback+0x6d4>)
- 8001c58:	ed93 7b00 	vldr	d7, [r3]
- 8001c5c:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
- 8001c60:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001c64:	d50a      	bpl.n	8001c7c <HAL_TIM_PeriodElapsedCallback+0x5dc>
+ 8001c36:	4b4f      	ldr	r3, [pc, #316]	; (8001d74 <HAL_TIM_PeriodElapsedCallback+0x6d4>)
+ 8001c38:	ed93 7b00 	vldr	d7, [r3]
+ 8001c3c:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
+ 8001c40:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001c44:	dd0a      	ble.n	8001c5c <HAL_TIM_PeriodElapsedCallback+0x5bc>
 			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_0, GPIO_PIN_RESET);
- 8001c66:	2200      	movs	r2, #0
- 8001c68:	2101      	movs	r1, #1
- 8001c6a:	4845      	ldr	r0, [pc, #276]	; (8001d80 <HAL_TIM_PeriodElapsedCallback+0x6e0>)
- 8001c6c:	f007 f83a 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001c46:	2200      	movs	r2, #0
+ 8001c48:	2101      	movs	r1, #1
+ 8001c4a:	484c      	ldr	r0, [pc, #304]	; (8001d7c <HAL_TIM_PeriodElapsedCallback+0x6dc>)
+ 8001c4c:	f007 f84a 	bl	8008ce4 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_1, GPIO_PIN_SET);
- 8001c70:	2201      	movs	r2, #1
- 8001c72:	2102      	movs	r1, #2
- 8001c74:	4842      	ldr	r0, [pc, #264]	; (8001d80 <HAL_TIM_PeriodElapsedCallback+0x6e0>)
- 8001c76:	f007 f835 	bl	8008ce4 <HAL_GPIO_WritePin>
- 8001c7a:	e011      	b.n	8001ca0 <HAL_TIM_PeriodElapsedCallback+0x600>
-		}else if(ut2 == 0){
- 8001c7c:	4b3d      	ldr	r3, [pc, #244]	; (8001d74 <HAL_TIM_PeriodElapsedCallback+0x6d4>)
- 8001c7e:	ed93 7b00 	vldr	d7, [r3]
- 8001c82:	eeb5 7b40 	vcmp.f64	d7, #0.0
- 8001c86:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001c8a:	d109      	bne.n	8001ca0 <HAL_TIM_PeriodElapsedCallback+0x600>
-			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_0, GPIO_PIN_RESET);
- 8001c8c:	2200      	movs	r2, #0
- 8001c8e:	2101      	movs	r1, #1
- 8001c90:	483b      	ldr	r0, [pc, #236]	; (8001d80 <HAL_TIM_PeriodElapsedCallback+0x6e0>)
- 8001c92:	f007 f827 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001c50:	2201      	movs	r2, #1
+ 8001c52:	2102      	movs	r1, #2
+ 8001c54:	4849      	ldr	r0, [pc, #292]	; (8001d7c <HAL_TIM_PeriodElapsedCallback+0x6dc>)
+ 8001c56:	f007 f845 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001c5a:	e024      	b.n	8001ca6 <HAL_TIM_PeriodElapsedCallback+0x606>
+		}else if(ut2 < 0){
+ 8001c5c:	4b45      	ldr	r3, [pc, #276]	; (8001d74 <HAL_TIM_PeriodElapsedCallback+0x6d4>)
+ 8001c5e:	ed93 7b00 	vldr	d7, [r3]
+ 8001c62:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
+ 8001c66:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001c6a:	d50a      	bpl.n	8001c82 <HAL_TIM_PeriodElapsedCallback+0x5e2>
+			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_0, GPIO_PIN_SET);
+ 8001c6c:	2201      	movs	r2, #1
+ 8001c6e:	2101      	movs	r1, #1
+ 8001c70:	4842      	ldr	r0, [pc, #264]	; (8001d7c <HAL_TIM_PeriodElapsedCallback+0x6dc>)
+ 8001c72:	f007 f837 	bl	8008ce4 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_1, GPIO_PIN_RESET);
- 8001c96:	2200      	movs	r2, #0
- 8001c98:	2102      	movs	r1, #2
- 8001c9a:	4839      	ldr	r0, [pc, #228]	; (8001d80 <HAL_TIM_PeriodElapsedCallback+0x6e0>)
- 8001c9c:	f007 f822 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001c76:	2200      	movs	r2, #0
+ 8001c78:	2102      	movs	r1, #2
+ 8001c7a:	4840      	ldr	r0, [pc, #256]	; (8001d7c <HAL_TIM_PeriodElapsedCallback+0x6dc>)
+ 8001c7c:	f007 f832 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001c80:	e011      	b.n	8001ca6 <HAL_TIM_PeriodElapsedCallback+0x606>
+		}else if(ut2 == 0){
+ 8001c82:	4b3c      	ldr	r3, [pc, #240]	; (8001d74 <HAL_TIM_PeriodElapsedCallback+0x6d4>)
+ 8001c84:	ed93 7b00 	vldr	d7, [r3]
+ 8001c88:	eeb5 7b40 	vcmp.f64	d7, #0.0
+ 8001c8c:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001c90:	d109      	bne.n	8001ca6 <HAL_TIM_PeriodElapsedCallback+0x606>
+			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_0, GPIO_PIN_RESET);
+ 8001c92:	2200      	movs	r2, #0
+ 8001c94:	2101      	movs	r1, #1
+ 8001c96:	4839      	ldr	r0, [pc, #228]	; (8001d7c <HAL_TIM_PeriodElapsedCallback+0x6dc>)
+ 8001c98:	f007 f824 	bl	8008ce4 <HAL_GPIO_WritePin>
+			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_1, GPIO_PIN_RESET);
+ 8001c9c:	2200      	movs	r2, #0
+ 8001c9e:	2102      	movs	r1, #2
+ 8001ca0:	4836      	ldr	r0, [pc, #216]	; (8001d7c <HAL_TIM_PeriodElapsedCallback+0x6dc>)
+ 8001ca2:	f007 f81f 	bl	8008ce4 <HAL_GPIO_WritePin>
 		}
 
 		if(ut3 > 0){
- 8001ca0:	4b2b      	ldr	r3, [pc, #172]	; (8001d50 <HAL_TIM_PeriodElapsedCallback+0x6b0>)
- 8001ca2:	ed93 7b00 	vldr	d7, [r3]
- 8001ca6:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
- 8001caa:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001cae:	dd0a      	ble.n	8001cc6 <HAL_TIM_PeriodElapsedCallback+0x626>
+ 8001ca6:	4b2a      	ldr	r3, [pc, #168]	; (8001d50 <HAL_TIM_PeriodElapsedCallback+0x6b0>)
+ 8001ca8:	ed93 7b00 	vldr	d7, [r3]
+ 8001cac:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
+ 8001cb0:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001cb4:	dd0a      	ble.n	8001ccc <HAL_TIM_PeriodElapsedCallback+0x62c>
 			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_0, GPIO_PIN_SET);
- 8001cb0:	2201      	movs	r2, #1
- 8001cb2:	2101      	movs	r1, #1
- 8001cb4:	4833      	ldr	r0, [pc, #204]	; (8001d84 <HAL_TIM_PeriodElapsedCallback+0x6e4>)
- 8001cb6:	f007 f815 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001cb6:	2201      	movs	r2, #1
+ 8001cb8:	2101      	movs	r1, #1
+ 8001cba:	4831      	ldr	r0, [pc, #196]	; (8001d80 <HAL_TIM_PeriodElapsedCallback+0x6e0>)
+ 8001cbc:	f007 f812 	bl	8008ce4 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_1, GPIO_PIN_RESET);
- 8001cba:	2200      	movs	r2, #0
- 8001cbc:	2102      	movs	r1, #2
- 8001cbe:	4831      	ldr	r0, [pc, #196]	; (8001d84 <HAL_TIM_PeriodElapsedCallback+0x6e4>)
- 8001cc0:	f007 f810 	bl	8008ce4 <HAL_GPIO_WritePin>
- 8001cc4:	e024      	b.n	8001d10 <HAL_TIM_PeriodElapsedCallback+0x670>
+ 8001cc0:	2200      	movs	r2, #0
+ 8001cc2:	2102      	movs	r1, #2
+ 8001cc4:	482e      	ldr	r0, [pc, #184]	; (8001d80 <HAL_TIM_PeriodElapsedCallback+0x6e0>)
+ 8001cc6:	f007 f80d 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001cca:	e024      	b.n	8001d16 <HAL_TIM_PeriodElapsedCallback+0x676>
 		}else if(ut3 < 0){
- 8001cc6:	4b22      	ldr	r3, [pc, #136]	; (8001d50 <HAL_TIM_PeriodElapsedCallback+0x6b0>)
- 8001cc8:	ed93 7b00 	vldr	d7, [r3]
- 8001ccc:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
- 8001cd0:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001cd4:	d50a      	bpl.n	8001cec <HAL_TIM_PeriodElapsedCallback+0x64c>
+ 8001ccc:	4b20      	ldr	r3, [pc, #128]	; (8001d50 <HAL_TIM_PeriodElapsedCallback+0x6b0>)
+ 8001cce:	ed93 7b00 	vldr	d7, [r3]
+ 8001cd2:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
+ 8001cd6:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001cda:	d50a      	bpl.n	8001cf2 <HAL_TIM_PeriodElapsedCallback+0x652>
 			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_0, GPIO_PIN_RESET);
- 8001cd6:	2200      	movs	r2, #0
- 8001cd8:	2101      	movs	r1, #1
- 8001cda:	482a      	ldr	r0, [pc, #168]	; (8001d84 <HAL_TIM_PeriodElapsedCallback+0x6e4>)
- 8001cdc:	f007 f802 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001cdc:	2200      	movs	r2, #0
+ 8001cde:	2101      	movs	r1, #1
+ 8001ce0:	4827      	ldr	r0, [pc, #156]	; (8001d80 <HAL_TIM_PeriodElapsedCallback+0x6e0>)
+ 8001ce2:	f006 ffff 	bl	8008ce4 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_1, GPIO_PIN_SET);
- 8001ce0:	2201      	movs	r2, #1
- 8001ce2:	2102      	movs	r1, #2
- 8001ce4:	4827      	ldr	r0, [pc, #156]	; (8001d84 <HAL_TIM_PeriodElapsedCallback+0x6e4>)
- 8001ce6:	f006 fffd 	bl	8008ce4 <HAL_GPIO_WritePin>
- 8001cea:	e011      	b.n	8001d10 <HAL_TIM_PeriodElapsedCallback+0x670>
+ 8001ce6:	2201      	movs	r2, #1
+ 8001ce8:	2102      	movs	r1, #2
+ 8001cea:	4825      	ldr	r0, [pc, #148]	; (8001d80 <HAL_TIM_PeriodElapsedCallback+0x6e0>)
+ 8001cec:	f006 fffa 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001cf0:	e011      	b.n	8001d16 <HAL_TIM_PeriodElapsedCallback+0x676>
 		}else if(ut3 == 0){
- 8001cec:	4b18      	ldr	r3, [pc, #96]	; (8001d50 <HAL_TIM_PeriodElapsedCallback+0x6b0>)
- 8001cee:	ed93 7b00 	vldr	d7, [r3]
- 8001cf2:	eeb5 7b40 	vcmp.f64	d7, #0.0
- 8001cf6:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001cfa:	d109      	bne.n	8001d10 <HAL_TIM_PeriodElapsedCallback+0x670>
+ 8001cf2:	4b17      	ldr	r3, [pc, #92]	; (8001d50 <HAL_TIM_PeriodElapsedCallback+0x6b0>)
+ 8001cf4:	ed93 7b00 	vldr	d7, [r3]
+ 8001cf8:	eeb5 7b40 	vcmp.f64	d7, #0.0
+ 8001cfc:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001d00:	d109      	bne.n	8001d16 <HAL_TIM_PeriodElapsedCallback+0x676>
 			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_0, GPIO_PIN_RESET);
- 8001cfc:	2200      	movs	r2, #0
- 8001cfe:	2101      	movs	r1, #1
- 8001d00:	4820      	ldr	r0, [pc, #128]	; (8001d84 <HAL_TIM_PeriodElapsedCallback+0x6e4>)
- 8001d02:	f006 ffef 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001d02:	2200      	movs	r2, #0
+ 8001d04:	2101      	movs	r1, #1
+ 8001d06:	481e      	ldr	r0, [pc, #120]	; (8001d80 <HAL_TIM_PeriodElapsedCallback+0x6e0>)
+ 8001d08:	f006 ffec 	bl	8008ce4 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(GPIOG, GPIO_PIN_1, GPIO_PIN_RESET);
- 8001d06:	2200      	movs	r2, #0
- 8001d08:	2102      	movs	r1, #2
- 8001d0a:	481e      	ldr	r0, [pc, #120]	; (8001d84 <HAL_TIM_PeriodElapsedCallback+0x6e4>)
- 8001d0c:	f006 ffea 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001d0c:	2200      	movs	r2, #0
+ 8001d0e:	2102      	movs	r1, #2
+ 8001d10:	481b      	ldr	r0, [pc, #108]	; (8001d80 <HAL_TIM_PeriodElapsedCallback+0x6e0>)
+ 8001d12:	f006 ffe7 	bl	8008ce4 <HAL_GPIO_WritePin>
 		}
 
 		if(ut4 > 0){
- 8001d10:	4b14      	ldr	r3, [pc, #80]	; (8001d64 <HAL_TIM_PeriodElapsedCallback+0x6c4>)
- 8001d12:	ed93 7b00 	vldr	d7, [r3]
- 8001d16:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
- 8001d1a:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001d1e:	dd35      	ble.n	8001d8c <HAL_TIM_PeriodElapsedCallback+0x6ec>
+ 8001d16:	4b13      	ldr	r3, [pc, #76]	; (8001d64 <HAL_TIM_PeriodElapsedCallback+0x6c4>)
+ 8001d18:	ed93 7b00 	vldr	d7, [r3]
+ 8001d1c:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
+ 8001d20:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001d24:	dd30      	ble.n	8001d88 <HAL_TIM_PeriodElapsedCallback+0x6e8>
 			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_10, GPIO_PIN_SET);
- 8001d20:	2201      	movs	r2, #1
- 8001d22:	f44f 6180 	mov.w	r1, #1024	; 0x400
- 8001d26:	4818      	ldr	r0, [pc, #96]	; (8001d88 <HAL_TIM_PeriodElapsedCallback+0x6e8>)
- 8001d28:	f006 ffdc 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001d26:	2201      	movs	r2, #1
+ 8001d28:	f44f 6180 	mov.w	r1, #1024	; 0x400
+ 8001d2c:	4815      	ldr	r0, [pc, #84]	; (8001d84 <HAL_TIM_PeriodElapsedCallback+0x6e4>)
+ 8001d2e:	f006 ffd9 	bl	8008ce4 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_12,  GPIO_PIN_RESET);
- 8001d2c:	2200      	movs	r2, #0
- 8001d2e:	f44f 5180 	mov.w	r1, #4096	; 0x1000
- 8001d32:	4815      	ldr	r0, [pc, #84]	; (8001d88 <HAL_TIM_PeriodElapsedCallback+0x6e8>)
- 8001d34:	f006 ffd6 	bl	8008ce4 <HAL_GPIO_WritePin>
- 8001d38:	e051      	b.n	8001dde <HAL_TIM_PeriodElapsedCallback+0x73e>
- 8001d3a:	bf00      	nop
- 8001d3c:	f3af 8000 	nop.w
+ 8001d32:	2200      	movs	r2, #0
+ 8001d34:	f44f 5180 	mov.w	r1, #4096	; 0x1000
+ 8001d38:	4812      	ldr	r0, [pc, #72]	; (8001d84 <HAL_TIM_PeriodElapsedCallback+0x6e4>)
+ 8001d3a:	f006 ffd3 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001d3e:	e04c      	b.n	8001dda <HAL_TIM_PeriodElapsedCallback+0x73a>
  8001d40:	d2f1a9fc 	.word	0xd2f1a9fc
  8001d44:	3f50624d 	.word	0x3f50624d
  8001d48:	240005f0 	.word	0x240005f0
@@ -3600,233 +3596,233 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  8001d6c:	3ff00000 	.word	0x3ff00000
  8001d70:	bff00000 	.word	0xbff00000
  8001d74:	24000608 	.word	0x24000608
- 8001d78:	58020400 	.word	0x58020400
- 8001d7c:	58021400 	.word	0x58021400
- 8001d80:	58020c00 	.word	0x58020c00
- 8001d84:	58021800 	.word	0x58021800
- 8001d88:	58021000 	.word	0x58021000
+ 8001d78:	58021400 	.word	0x58021400
+ 8001d7c:	58020c00 	.word	0x58020c00
+ 8001d80:	58021800 	.word	0x58021800
+ 8001d84:	58021000 	.word	0x58021000
 		}else if(ut4 < 0){
- 8001d8c:	4b90      	ldr	r3, [pc, #576]	; (8001fd0 <HAL_TIM_PeriodElapsedCallback+0x930>)
- 8001d8e:	ed93 7b00 	vldr	d7, [r3]
- 8001d92:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
- 8001d96:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001d9a:	d50c      	bpl.n	8001db6 <HAL_TIM_PeriodElapsedCallback+0x716>
+ 8001d88:	4b91      	ldr	r3, [pc, #580]	; (8001fd0 <HAL_TIM_PeriodElapsedCallback+0x930>)
+ 8001d8a:	ed93 7b00 	vldr	d7, [r3]
+ 8001d8e:	eeb5 7bc0 	vcmpe.f64	d7, #0.0
+ 8001d92:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001d96:	d50c      	bpl.n	8001db2 <HAL_TIM_PeriodElapsedCallback+0x712>
 			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_10, GPIO_PIN_RESET);
- 8001d9c:	2200      	movs	r2, #0
- 8001d9e:	f44f 6180 	mov.w	r1, #1024	; 0x400
- 8001da2:	488c      	ldr	r0, [pc, #560]	; (8001fd4 <HAL_TIM_PeriodElapsedCallback+0x934>)
- 8001da4:	f006 ff9e 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001d98:	2200      	movs	r2, #0
+ 8001d9a:	f44f 6180 	mov.w	r1, #1024	; 0x400
+ 8001d9e:	488d      	ldr	r0, [pc, #564]	; (8001fd4 <HAL_TIM_PeriodElapsedCallback+0x934>)
+ 8001da0:	f006 ffa0 	bl	8008ce4 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_12, GPIO_PIN_SET);
- 8001da8:	2201      	movs	r2, #1
- 8001daa:	f44f 5180 	mov.w	r1, #4096	; 0x1000
- 8001dae:	4889      	ldr	r0, [pc, #548]	; (8001fd4 <HAL_TIM_PeriodElapsedCallback+0x934>)
- 8001db0:	f006 ff98 	bl	8008ce4 <HAL_GPIO_WritePin>
- 8001db4:	e013      	b.n	8001dde <HAL_TIM_PeriodElapsedCallback+0x73e>
+ 8001da4:	2201      	movs	r2, #1
+ 8001da6:	f44f 5180 	mov.w	r1, #4096	; 0x1000
+ 8001daa:	488a      	ldr	r0, [pc, #552]	; (8001fd4 <HAL_TIM_PeriodElapsedCallback+0x934>)
+ 8001dac:	f006 ff9a 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001db0:	e013      	b.n	8001dda <HAL_TIM_PeriodElapsedCallback+0x73a>
 		}else if(ut4 == 0){
- 8001db6:	4b86      	ldr	r3, [pc, #536]	; (8001fd0 <HAL_TIM_PeriodElapsedCallback+0x930>)
- 8001db8:	ed93 7b00 	vldr	d7, [r3]
- 8001dbc:	eeb5 7b40 	vcmp.f64	d7, #0.0
- 8001dc0:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8001dc4:	d10b      	bne.n	8001dde <HAL_TIM_PeriodElapsedCallback+0x73e>
+ 8001db2:	4b87      	ldr	r3, [pc, #540]	; (8001fd0 <HAL_TIM_PeriodElapsedCallback+0x930>)
+ 8001db4:	ed93 7b00 	vldr	d7, [r3]
+ 8001db8:	eeb5 7b40 	vcmp.f64	d7, #0.0
+ 8001dbc:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8001dc0:	d10b      	bne.n	8001dda <HAL_TIM_PeriodElapsedCallback+0x73a>
 			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_10, GPIO_PIN_RESET);
- 8001dc6:	2200      	movs	r2, #0
- 8001dc8:	f44f 6180 	mov.w	r1, #1024	; 0x400
- 8001dcc:	4881      	ldr	r0, [pc, #516]	; (8001fd4 <HAL_TIM_PeriodElapsedCallback+0x934>)
- 8001dce:	f006 ff89 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001dc2:	2200      	movs	r2, #0
+ 8001dc4:	f44f 6180 	mov.w	r1, #1024	; 0x400
+ 8001dc8:	4882      	ldr	r0, [pc, #520]	; (8001fd4 <HAL_TIM_PeriodElapsedCallback+0x934>)
+ 8001dca:	f006 ff8b 	bl	8008ce4 <HAL_GPIO_WritePin>
 			HAL_GPIO_WritePin(GPIOE, GPIO_PIN_12, GPIO_PIN_RESET);
- 8001dd2:	2200      	movs	r2, #0
- 8001dd4:	f44f 5180 	mov.w	r1, #4096	; 0x1000
- 8001dd8:	487e      	ldr	r0, [pc, #504]	; (8001fd4 <HAL_TIM_PeriodElapsedCallback+0x934>)
- 8001dda:	f006 ff83 	bl	8008ce4 <HAL_GPIO_WritePin>
+ 8001dce:	2200      	movs	r2, #0
+ 8001dd0:	f44f 5180 	mov.w	r1, #4096	; 0x1000
+ 8001dd4:	487f      	ldr	r0, [pc, #508]	; (8001fd4 <HAL_TIM_PeriodElapsedCallback+0x934>)
+ 8001dd6:	f006 ff85 	bl	8008ce4 <HAL_GPIO_WritePin>
 		}
 
 
 		ut1 = fabs(ut1);
- 8001dde:	4b7e      	ldr	r3, [pc, #504]	; (8001fd8 <HAL_TIM_PeriodElapsedCallback+0x938>)
- 8001de0:	ed93 7b00 	vldr	d7, [r3]
- 8001de4:	eeb0 7bc7 	vabs.f64	d7, d7
- 8001de8:	4b7b      	ldr	r3, [pc, #492]	; (8001fd8 <HAL_TIM_PeriodElapsedCallback+0x938>)
- 8001dea:	ed83 7b00 	vstr	d7, [r3]
+ 8001dda:	4b7f      	ldr	r3, [pc, #508]	; (8001fd8 <HAL_TIM_PeriodElapsedCallback+0x938>)
+ 8001ddc:	ed93 7b00 	vldr	d7, [r3]
+ 8001de0:	eeb0 7bc7 	vabs.f64	d7, d7
+ 8001de4:	4b7c      	ldr	r3, [pc, #496]	; (8001fd8 <HAL_TIM_PeriodElapsedCallback+0x938>)
+ 8001de6:	ed83 7b00 	vstr	d7, [r3]
 		ut2 = fabs(ut2);
- 8001dee:	4b7b      	ldr	r3, [pc, #492]	; (8001fdc <HAL_TIM_PeriodElapsedCallback+0x93c>)
- 8001df0:	ed93 7b00 	vldr	d7, [r3]
- 8001df4:	eeb0 7bc7 	vabs.f64	d7, d7
- 8001df8:	4b78      	ldr	r3, [pc, #480]	; (8001fdc <HAL_TIM_PeriodElapsedCallback+0x93c>)
- 8001dfa:	ed83 7b00 	vstr	d7, [r3]
+ 8001dea:	4b7c      	ldr	r3, [pc, #496]	; (8001fdc <HAL_TIM_PeriodElapsedCallback+0x93c>)
+ 8001dec:	ed93 7b00 	vldr	d7, [r3]
+ 8001df0:	eeb0 7bc7 	vabs.f64	d7, d7
+ 8001df4:	4b79      	ldr	r3, [pc, #484]	; (8001fdc <HAL_TIM_PeriodElapsedCallback+0x93c>)
+ 8001df6:	ed83 7b00 	vstr	d7, [r3]
 		ut3 = fabs(ut3);
- 8001dfe:	4b78      	ldr	r3, [pc, #480]	; (8001fe0 <HAL_TIM_PeriodElapsedCallback+0x940>)
- 8001e00:	ed93 7b00 	vldr	d7, [r3]
- 8001e04:	eeb0 7bc7 	vabs.f64	d7, d7
- 8001e08:	4b75      	ldr	r3, [pc, #468]	; (8001fe0 <HAL_TIM_PeriodElapsedCallback+0x940>)
- 8001e0a:	ed83 7b00 	vstr	d7, [r3]
+ 8001dfa:	4b79      	ldr	r3, [pc, #484]	; (8001fe0 <HAL_TIM_PeriodElapsedCallback+0x940>)
+ 8001dfc:	ed93 7b00 	vldr	d7, [r3]
+ 8001e00:	eeb0 7bc7 	vabs.f64	d7, d7
+ 8001e04:	4b76      	ldr	r3, [pc, #472]	; (8001fe0 <HAL_TIM_PeriodElapsedCallback+0x940>)
+ 8001e06:	ed83 7b00 	vstr	d7, [r3]
 		ut4 = fabs(ut4);
- 8001e0e:	4b70      	ldr	r3, [pc, #448]	; (8001fd0 <HAL_TIM_PeriodElapsedCallback+0x930>)
- 8001e10:	ed93 7b00 	vldr	d7, [r3]
- 8001e14:	eeb0 7bc7 	vabs.f64	d7, d7
- 8001e18:	4b6d      	ldr	r3, [pc, #436]	; (8001fd0 <HAL_TIM_PeriodElapsedCallback+0x930>)
- 8001e1a:	ed83 7b00 	vstr	d7, [r3]
+ 8001e0a:	4b71      	ldr	r3, [pc, #452]	; (8001fd0 <HAL_TIM_PeriodElapsedCallback+0x930>)
+ 8001e0c:	ed93 7b00 	vldr	d7, [r3]
+ 8001e10:	eeb0 7bc7 	vabs.f64	d7, d7
+ 8001e14:	4b6e      	ldr	r3, [pc, #440]	; (8001fd0 <HAL_TIM_PeriodElapsedCallback+0x930>)
+ 8001e16:	ed83 7b00 	vstr	d7, [r3]
 
 		__HAL_TIM_SET_COMPARE(&htim4, TIM_CHANNEL_1, ut1 * 1000);
- 8001e1e:	4b6e      	ldr	r3, [pc, #440]	; (8001fd8 <HAL_TIM_PeriodElapsedCallback+0x938>)
- 8001e20:	ed93 7b00 	vldr	d7, [r3]
- 8001e24:	ed9f 6b68 	vldr	d6, [pc, #416]	; 8001fc8 <HAL_TIM_PeriodElapsedCallback+0x928>
- 8001e28:	ee27 7b06 	vmul.f64	d7, d7, d6
- 8001e2c:	4b6d      	ldr	r3, [pc, #436]	; (8001fe4 <HAL_TIM_PeriodElapsedCallback+0x944>)
- 8001e2e:	681b      	ldr	r3, [r3, #0]
- 8001e30:	eefc 7bc7 	vcvt.u32.f64	s15, d7
- 8001e34:	ee17 2a90 	vmov	r2, s15
- 8001e38:	635a      	str	r2, [r3, #52]	; 0x34
+ 8001e1a:	4b6f      	ldr	r3, [pc, #444]	; (8001fd8 <HAL_TIM_PeriodElapsedCallback+0x938>)
+ 8001e1c:	ed93 7b00 	vldr	d7, [r3]
+ 8001e20:	ed9f 6b69 	vldr	d6, [pc, #420]	; 8001fc8 <HAL_TIM_PeriodElapsedCallback+0x928>
+ 8001e24:	ee27 7b06 	vmul.f64	d7, d7, d6
+ 8001e28:	4b6e      	ldr	r3, [pc, #440]	; (8001fe4 <HAL_TIM_PeriodElapsedCallback+0x944>)
+ 8001e2a:	681b      	ldr	r3, [r3, #0]
+ 8001e2c:	eefc 7bc7 	vcvt.u32.f64	s15, d7
+ 8001e30:	ee17 2a90 	vmov	r2, s15
+ 8001e34:	635a      	str	r2, [r3, #52]	; 0x34
 		__HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_1, ut2 * 1000);
- 8001e3a:	4b68      	ldr	r3, [pc, #416]	; (8001fdc <HAL_TIM_PeriodElapsedCallback+0x93c>)
- 8001e3c:	ed93 7b00 	vldr	d7, [r3]
- 8001e40:	ed9f 6b61 	vldr	d6, [pc, #388]	; 8001fc8 <HAL_TIM_PeriodElapsedCallback+0x928>
- 8001e44:	ee27 7b06 	vmul.f64	d7, d7, d6
- 8001e48:	4b67      	ldr	r3, [pc, #412]	; (8001fe8 <HAL_TIM_PeriodElapsedCallback+0x948>)
- 8001e4a:	681b      	ldr	r3, [r3, #0]
- 8001e4c:	eefc 7bc7 	vcvt.u32.f64	s15, d7
- 8001e50:	ee17 2a90 	vmov	r2, s15
- 8001e54:	635a      	str	r2, [r3, #52]	; 0x34
+ 8001e36:	4b69      	ldr	r3, [pc, #420]	; (8001fdc <HAL_TIM_PeriodElapsedCallback+0x93c>)
+ 8001e38:	ed93 7b00 	vldr	d7, [r3]
+ 8001e3c:	ed9f 6b62 	vldr	d6, [pc, #392]	; 8001fc8 <HAL_TIM_PeriodElapsedCallback+0x928>
+ 8001e40:	ee27 7b06 	vmul.f64	d7, d7, d6
+ 8001e44:	4b68      	ldr	r3, [pc, #416]	; (8001fe8 <HAL_TIM_PeriodElapsedCallback+0x948>)
+ 8001e46:	681b      	ldr	r3, [r3, #0]
+ 8001e48:	eefc 7bc7 	vcvt.u32.f64	s15, d7
+ 8001e4c:	ee17 2a90 	vmov	r2, s15
+ 8001e50:	635a      	str	r2, [r3, #52]	; 0x34
 		__HAL_TIM_SET_COMPARE(&htim15, TIM_CHANNEL_1, ut3 * 1000);
- 8001e56:	4b62      	ldr	r3, [pc, #392]	; (8001fe0 <HAL_TIM_PeriodElapsedCallback+0x940>)
- 8001e58:	ed93 7b00 	vldr	d7, [r3]
- 8001e5c:	ed9f 6b5a 	vldr	d6, [pc, #360]	; 8001fc8 <HAL_TIM_PeriodElapsedCallback+0x928>
- 8001e60:	ee27 7b06 	vmul.f64	d7, d7, d6
- 8001e64:	4b61      	ldr	r3, [pc, #388]	; (8001fec <HAL_TIM_PeriodElapsedCallback+0x94c>)
- 8001e66:	681b      	ldr	r3, [r3, #0]
- 8001e68:	eefc 7bc7 	vcvt.u32.f64	s15, d7
- 8001e6c:	ee17 2a90 	vmov	r2, s15
- 8001e70:	635a      	str	r2, [r3, #52]	; 0x34
+ 8001e52:	4b63      	ldr	r3, [pc, #396]	; (8001fe0 <HAL_TIM_PeriodElapsedCallback+0x940>)
+ 8001e54:	ed93 7b00 	vldr	d7, [r3]
+ 8001e58:	ed9f 6b5b 	vldr	d6, [pc, #364]	; 8001fc8 <HAL_TIM_PeriodElapsedCallback+0x928>
+ 8001e5c:	ee27 7b06 	vmul.f64	d7, d7, d6
+ 8001e60:	4b62      	ldr	r3, [pc, #392]	; (8001fec <HAL_TIM_PeriodElapsedCallback+0x94c>)
+ 8001e62:	681b      	ldr	r3, [r3, #0]
+ 8001e64:	eefc 7bc7 	vcvt.u32.f64	s15, d7
+ 8001e68:	ee17 2a90 	vmov	r2, s15
+ 8001e6c:	635a      	str	r2, [r3, #52]	; 0x34
 		__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, ut4 * 1000);
- 8001e72:	4b57      	ldr	r3, [pc, #348]	; (8001fd0 <HAL_TIM_PeriodElapsedCallback+0x930>)
- 8001e74:	ed93 7b00 	vldr	d7, [r3]
- 8001e78:	ed9f 6b53 	vldr	d6, [pc, #332]	; 8001fc8 <HAL_TIM_PeriodElapsedCallback+0x928>
- 8001e7c:	ee27 7b06 	vmul.f64	d7, d7, d6
- 8001e80:	4b5b      	ldr	r3, [pc, #364]	; (8001ff0 <HAL_TIM_PeriodElapsedCallback+0x950>)
- 8001e82:	681b      	ldr	r3, [r3, #0]
- 8001e84:	eefc 7bc7 	vcvt.u32.f64	s15, d7
- 8001e88:	ee17 2a90 	vmov	r2, s15
- 8001e8c:	635a      	str	r2, [r3, #52]	; 0x34
+ 8001e6e:	4b58      	ldr	r3, [pc, #352]	; (8001fd0 <HAL_TIM_PeriodElapsedCallback+0x930>)
+ 8001e70:	ed93 7b00 	vldr	d7, [r3]
+ 8001e74:	ed9f 6b54 	vldr	d6, [pc, #336]	; 8001fc8 <HAL_TIM_PeriodElapsedCallback+0x928>
+ 8001e78:	ee27 7b06 	vmul.f64	d7, d7, d6
+ 8001e7c:	4b5c      	ldr	r3, [pc, #368]	; (8001ff0 <HAL_TIM_PeriodElapsedCallback+0x950>)
+ 8001e7e:	681b      	ldr	r3, [r3, #0]
+ 8001e80:	eefc 7bc7 	vcvt.u32.f64	s15, d7
+ 8001e84:	ee17 2a90 	vmov	r2, s15
+ 8001e88:	635a      	str	r2, [r3, #52]	; 0x34
 
 		error_last1 = error1;
- 8001e8e:	4b59      	ldr	r3, [pc, #356]	; (8001ff4 <HAL_TIM_PeriodElapsedCallback+0x954>)
- 8001e90:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8001e94:	4958      	ldr	r1, [pc, #352]	; (8001ff8 <HAL_TIM_PeriodElapsedCallback+0x958>)
- 8001e96:	e9c1 2300 	strd	r2, r3, [r1]
+ 8001e8a:	4b5a      	ldr	r3, [pc, #360]	; (8001ff4 <HAL_TIM_PeriodElapsedCallback+0x954>)
+ 8001e8c:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8001e90:	4959      	ldr	r1, [pc, #356]	; (8001ff8 <HAL_TIM_PeriodElapsedCallback+0x958>)
+ 8001e92:	e9c1 2300 	strd	r2, r3, [r1]
 		error_last2 = error2;
- 8001e9a:	4b58      	ldr	r3, [pc, #352]	; (8001ffc <HAL_TIM_PeriodElapsedCallback+0x95c>)
- 8001e9c:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8001ea0:	4957      	ldr	r1, [pc, #348]	; (8002000 <HAL_TIM_PeriodElapsedCallback+0x960>)
- 8001ea2:	e9c1 2300 	strd	r2, r3, [r1]
+ 8001e96:	4b59      	ldr	r3, [pc, #356]	; (8001ffc <HAL_TIM_PeriodElapsedCallback+0x95c>)
+ 8001e98:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8001e9c:	4958      	ldr	r1, [pc, #352]	; (8002000 <HAL_TIM_PeriodElapsedCallback+0x960>)
+ 8001e9e:	e9c1 2300 	strd	r2, r3, [r1]
 		error_last3 = error3;
- 8001ea6:	4b57      	ldr	r3, [pc, #348]	; (8002004 <HAL_TIM_PeriodElapsedCallback+0x964>)
- 8001ea8:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8001eac:	4956      	ldr	r1, [pc, #344]	; (8002008 <HAL_TIM_PeriodElapsedCallback+0x968>)
- 8001eae:	e9c1 2300 	strd	r2, r3, [r1]
+ 8001ea2:	4b58      	ldr	r3, [pc, #352]	; (8002004 <HAL_TIM_PeriodElapsedCallback+0x964>)
+ 8001ea4:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8001ea8:	4957      	ldr	r1, [pc, #348]	; (8002008 <HAL_TIM_PeriodElapsedCallback+0x968>)
+ 8001eaa:	e9c1 2300 	strd	r2, r3, [r1]
 		error_last4 = error4;
- 8001eb2:	4b56      	ldr	r3, [pc, #344]	; (800200c <HAL_TIM_PeriodElapsedCallback+0x96c>)
- 8001eb4:	e9d3 2300 	ldrd	r2, r3, [r3]
- 8001eb8:	4955      	ldr	r1, [pc, #340]	; (8002010 <HAL_TIM_PeriodElapsedCallback+0x970>)
- 8001eba:	e9c1 2300 	strd	r2, r3, [r1]
+ 8001eae:	4b57      	ldr	r3, [pc, #348]	; (800200c <HAL_TIM_PeriodElapsedCallback+0x96c>)
+ 8001eb0:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 8001eb4:	4956      	ldr	r1, [pc, #344]	; (8002010 <HAL_TIM_PeriodElapsedCallback+0x970>)
+ 8001eb6:	e9c1 2300 	strd	r2, r3, [r1]
 
 		push_vel_x = (PV1 + PV2 + PV3 + PV4) * r/4 ;
- 8001ebe:	4b55      	ldr	r3, [pc, #340]	; (8002014 <HAL_TIM_PeriodElapsedCallback+0x974>)
- 8001ec0:	ed93 6b00 	vldr	d6, [r3]
- 8001ec4:	4b54      	ldr	r3, [pc, #336]	; (8002018 <HAL_TIM_PeriodElapsedCallback+0x978>)
- 8001ec6:	ed93 7b00 	vldr	d7, [r3]
- 8001eca:	ee36 6b07 	vadd.f64	d6, d6, d7
- 8001ece:	4b53      	ldr	r3, [pc, #332]	; (800201c <HAL_TIM_PeriodElapsedCallback+0x97c>)
- 8001ed0:	ed93 7b00 	vldr	d7, [r3]
- 8001ed4:	ee36 6b07 	vadd.f64	d6, d6, d7
- 8001ed8:	4b51      	ldr	r3, [pc, #324]	; (8002020 <HAL_TIM_PeriodElapsedCallback+0x980>)
- 8001eda:	ed93 7b00 	vldr	d7, [r3]
- 8001ede:	ee36 6b07 	vadd.f64	d6, d6, d7
- 8001ee2:	4b50      	ldr	r3, [pc, #320]	; (8002024 <HAL_TIM_PeriodElapsedCallback+0x984>)
- 8001ee4:	ed93 7b00 	vldr	d7, [r3]
- 8001ee8:	ee26 6b07 	vmul.f64	d6, d6, d7
- 8001eec:	eeb1 5b00 	vmov.f64	d5, #16	; 0x40800000  4.0
- 8001ef0:	ee86 7b05 	vdiv.f64	d7, d6, d5
- 8001ef4:	4b4c      	ldr	r3, [pc, #304]	; (8002028 <HAL_TIM_PeriodElapsedCallback+0x988>)
- 8001ef6:	ed83 7b00 	vstr	d7, [r3]
+ 8001eba:	4b56      	ldr	r3, [pc, #344]	; (8002014 <HAL_TIM_PeriodElapsedCallback+0x974>)
+ 8001ebc:	ed93 6b00 	vldr	d6, [r3]
+ 8001ec0:	4b55      	ldr	r3, [pc, #340]	; (8002018 <HAL_TIM_PeriodElapsedCallback+0x978>)
+ 8001ec2:	ed93 7b00 	vldr	d7, [r3]
+ 8001ec6:	ee36 6b07 	vadd.f64	d6, d6, d7
+ 8001eca:	4b54      	ldr	r3, [pc, #336]	; (800201c <HAL_TIM_PeriodElapsedCallback+0x97c>)
+ 8001ecc:	ed93 7b00 	vldr	d7, [r3]
+ 8001ed0:	ee36 6b07 	vadd.f64	d6, d6, d7
+ 8001ed4:	4b52      	ldr	r3, [pc, #328]	; (8002020 <HAL_TIM_PeriodElapsedCallback+0x980>)
+ 8001ed6:	ed93 7b00 	vldr	d7, [r3]
+ 8001eda:	ee36 6b07 	vadd.f64	d6, d6, d7
+ 8001ede:	4b51      	ldr	r3, [pc, #324]	; (8002024 <HAL_TIM_PeriodElapsedCallback+0x984>)
+ 8001ee0:	ed93 7b00 	vldr	d7, [r3]
+ 8001ee4:	ee26 6b07 	vmul.f64	d6, d6, d7
+ 8001ee8:	eeb1 5b00 	vmov.f64	d5, #16	; 0x40800000  4.0
+ 8001eec:	ee86 7b05 	vdiv.f64	d7, d6, d5
+ 8001ef0:	4b4d      	ldr	r3, [pc, #308]	; (8002028 <HAL_TIM_PeriodElapsedCallback+0x988>)
+ 8001ef2:	ed83 7b00 	vstr	d7, [r3]
 		push_vel_y = (-PV1 + PV2 + PV3 - PV4) * r/4 ;
- 8001efa:	4b47      	ldr	r3, [pc, #284]	; (8002018 <HAL_TIM_PeriodElapsedCallback+0x978>)
- 8001efc:	ed93 6b00 	vldr	d6, [r3]
- 8001f00:	4b44      	ldr	r3, [pc, #272]	; (8002014 <HAL_TIM_PeriodElapsedCallback+0x974>)
- 8001f02:	ed93 7b00 	vldr	d7, [r3]
- 8001f06:	ee36 6b47 	vsub.f64	d6, d6, d7
- 8001f0a:	4b44      	ldr	r3, [pc, #272]	; (800201c <HAL_TIM_PeriodElapsedCallback+0x97c>)
- 8001f0c:	ed93 7b00 	vldr	d7, [r3]
- 8001f10:	ee36 6b07 	vadd.f64	d6, d6, d7
- 8001f14:	4b42      	ldr	r3, [pc, #264]	; (8002020 <HAL_TIM_PeriodElapsedCallback+0x980>)
- 8001f16:	ed93 7b00 	vldr	d7, [r3]
- 8001f1a:	ee36 6b47 	vsub.f64	d6, d6, d7
- 8001f1e:	4b41      	ldr	r3, [pc, #260]	; (8002024 <HAL_TIM_PeriodElapsedCallback+0x984>)
- 8001f20:	ed93 7b00 	vldr	d7, [r3]
- 8001f24:	ee26 6b07 	vmul.f64	d6, d6, d7
- 8001f28:	eeb1 5b00 	vmov.f64	d5, #16	; 0x40800000  4.0
- 8001f2c:	ee86 7b05 	vdiv.f64	d7, d6, d5
- 8001f30:	4b3e      	ldr	r3, [pc, #248]	; (800202c <HAL_TIM_PeriodElapsedCallback+0x98c>)
- 8001f32:	ed83 7b00 	vstr	d7, [r3]
+ 8001ef6:	4b48      	ldr	r3, [pc, #288]	; (8002018 <HAL_TIM_PeriodElapsedCallback+0x978>)
+ 8001ef8:	ed93 6b00 	vldr	d6, [r3]
+ 8001efc:	4b45      	ldr	r3, [pc, #276]	; (8002014 <HAL_TIM_PeriodElapsedCallback+0x974>)
+ 8001efe:	ed93 7b00 	vldr	d7, [r3]
+ 8001f02:	ee36 6b47 	vsub.f64	d6, d6, d7
+ 8001f06:	4b45      	ldr	r3, [pc, #276]	; (800201c <HAL_TIM_PeriodElapsedCallback+0x97c>)
+ 8001f08:	ed93 7b00 	vldr	d7, [r3]
+ 8001f0c:	ee36 6b07 	vadd.f64	d6, d6, d7
+ 8001f10:	4b43      	ldr	r3, [pc, #268]	; (8002020 <HAL_TIM_PeriodElapsedCallback+0x980>)
+ 8001f12:	ed93 7b00 	vldr	d7, [r3]
+ 8001f16:	ee36 6b47 	vsub.f64	d6, d6, d7
+ 8001f1a:	4b42      	ldr	r3, [pc, #264]	; (8002024 <HAL_TIM_PeriodElapsedCallback+0x984>)
+ 8001f1c:	ed93 7b00 	vldr	d7, [r3]
+ 8001f20:	ee26 6b07 	vmul.f64	d6, d6, d7
+ 8001f24:	eeb1 5b00 	vmov.f64	d5, #16	; 0x40800000  4.0
+ 8001f28:	ee86 7b05 	vdiv.f64	d7, d6, d5
+ 8001f2c:	4b3f      	ldr	r3, [pc, #252]	; (800202c <HAL_TIM_PeriodElapsedCallback+0x98c>)
+ 8001f2e:	ed83 7b00 	vstr	d7, [r3]
 		push_vel_z = (-PV1 + PV2 - PV3 + PV4) * r/(4 * (lx + ly) );
- 8001f36:	4b38      	ldr	r3, [pc, #224]	; (8002018 <HAL_TIM_PeriodElapsedCallback+0x978>)
- 8001f38:	ed93 6b00 	vldr	d6, [r3]
- 8001f3c:	4b35      	ldr	r3, [pc, #212]	; (8002014 <HAL_TIM_PeriodElapsedCallback+0x974>)
- 8001f3e:	ed93 7b00 	vldr	d7, [r3]
- 8001f42:	ee36 6b47 	vsub.f64	d6, d6, d7
- 8001f46:	4b35      	ldr	r3, [pc, #212]	; (800201c <HAL_TIM_PeriodElapsedCallback+0x97c>)
- 8001f48:	ed93 7b00 	vldr	d7, [r3]
- 8001f4c:	ee36 6b47 	vsub.f64	d6, d6, d7
- 8001f50:	4b33      	ldr	r3, [pc, #204]	; (8002020 <HAL_TIM_PeriodElapsedCallback+0x980>)
- 8001f52:	ed93 7b00 	vldr	d7, [r3]
- 8001f56:	ee36 6b07 	vadd.f64	d6, d6, d7
- 8001f5a:	4b32      	ldr	r3, [pc, #200]	; (8002024 <HAL_TIM_PeriodElapsedCallback+0x984>)
- 8001f5c:	ed93 7b00 	vldr	d7, [r3]
- 8001f60:	ee26 5b07 	vmul.f64	d5, d6, d7
- 8001f64:	4b32      	ldr	r3, [pc, #200]	; (8002030 <HAL_TIM_PeriodElapsedCallback+0x990>)
- 8001f66:	ed93 6b00 	vldr	d6, [r3]
- 8001f6a:	4b32      	ldr	r3, [pc, #200]	; (8002034 <HAL_TIM_PeriodElapsedCallback+0x994>)
- 8001f6c:	ed93 7b00 	vldr	d7, [r3]
- 8001f70:	ee36 7b07 	vadd.f64	d7, d6, d7
- 8001f74:	eeb1 6b00 	vmov.f64	d6, #16	; 0x40800000  4.0
- 8001f78:	ee27 6b06 	vmul.f64	d6, d7, d6
- 8001f7c:	ee85 7b06 	vdiv.f64	d7, d5, d6
- 8001f80:	4b2d      	ldr	r3, [pc, #180]	; (8002038 <HAL_TIM_PeriodElapsedCallback+0x998>)
- 8001f82:	ed83 7b00 	vstr	d7, [r3]
+ 8001f32:	4b39      	ldr	r3, [pc, #228]	; (8002018 <HAL_TIM_PeriodElapsedCallback+0x978>)
+ 8001f34:	ed93 6b00 	vldr	d6, [r3]
+ 8001f38:	4b36      	ldr	r3, [pc, #216]	; (8002014 <HAL_TIM_PeriodElapsedCallback+0x974>)
+ 8001f3a:	ed93 7b00 	vldr	d7, [r3]
+ 8001f3e:	ee36 6b47 	vsub.f64	d6, d6, d7
+ 8001f42:	4b36      	ldr	r3, [pc, #216]	; (800201c <HAL_TIM_PeriodElapsedCallback+0x97c>)
+ 8001f44:	ed93 7b00 	vldr	d7, [r3]
+ 8001f48:	ee36 6b47 	vsub.f64	d6, d6, d7
+ 8001f4c:	4b34      	ldr	r3, [pc, #208]	; (8002020 <HAL_TIM_PeriodElapsedCallback+0x980>)
+ 8001f4e:	ed93 7b00 	vldr	d7, [r3]
+ 8001f52:	ee36 6b07 	vadd.f64	d6, d6, d7
+ 8001f56:	4b33      	ldr	r3, [pc, #204]	; (8002024 <HAL_TIM_PeriodElapsedCallback+0x984>)
+ 8001f58:	ed93 7b00 	vldr	d7, [r3]
+ 8001f5c:	ee26 5b07 	vmul.f64	d5, d6, d7
+ 8001f60:	4b33      	ldr	r3, [pc, #204]	; (8002030 <HAL_TIM_PeriodElapsedCallback+0x990>)
+ 8001f62:	ed93 6b00 	vldr	d6, [r3]
+ 8001f66:	4b33      	ldr	r3, [pc, #204]	; (8002034 <HAL_TIM_PeriodElapsedCallback+0x994>)
+ 8001f68:	ed93 7b00 	vldr	d7, [r3]
+ 8001f6c:	ee36 7b07 	vadd.f64	d7, d6, d7
+ 8001f70:	eeb1 6b00 	vmov.f64	d6, #16	; 0x40800000  4.0
+ 8001f74:	ee27 6b06 	vmul.f64	d6, d7, d6
+ 8001f78:	ee85 7b06 	vdiv.f64	d7, d5, d6
+ 8001f7c:	4b2e      	ldr	r3, [pc, #184]	; (8002038 <HAL_TIM_PeriodElapsedCallback+0x998>)
+ 8001f7e:	ed83 7b00 	vstr	d7, [r3]
 
 		kkk += 1;
- 8001f86:	4b2d      	ldr	r3, [pc, #180]	; (800203c <HAL_TIM_PeriodElapsedCallback+0x99c>)
- 8001f88:	681b      	ldr	r3, [r3, #0]
- 8001f8a:	3301      	adds	r3, #1
- 8001f8c:	4a2b      	ldr	r2, [pc, #172]	; (800203c <HAL_TIM_PeriodElapsedCallback+0x99c>)
- 8001f8e:	6013      	str	r3, [r2, #0]
+ 8001f82:	4b2e      	ldr	r3, [pc, #184]	; (800203c <HAL_TIM_PeriodElapsedCallback+0x99c>)
+ 8001f84:	681b      	ldr	r3, [r3, #0]
+ 8001f86:	3301      	adds	r3, #1
+ 8001f88:	4a2c      	ldr	r2, [pc, #176]	; (800203c <HAL_TIM_PeriodElapsedCallback+0x99c>)
+ 8001f8a:	6013      	str	r3, [r2, #0]
 		if(kkk == 10){
- 8001f90:	4b2a      	ldr	r3, [pc, #168]	; (800203c <HAL_TIM_PeriodElapsedCallback+0x99c>)
- 8001f92:	681b      	ldr	r3, [r3, #0]
- 8001f94:	2b0a      	cmp	r3, #10
- 8001f96:	d113      	bne.n	8001fc0 <HAL_TIM_PeriodElapsedCallback+0x920>
+ 8001f8c:	4b2b      	ldr	r3, [pc, #172]	; (800203c <HAL_TIM_PeriodElapsedCallback+0x99c>)
+ 8001f8e:	681b      	ldr	r3, [r3, #0]
+ 8001f90:	2b0a      	cmp	r3, #10
+ 8001f92:	d113      	bne.n	8001fbc <HAL_TIM_PeriodElapsedCallback+0x91c>
 			// change parameter to real velocity
 			 publish_vel(push_vel_x, push_vel_y, push_vel_z);
- 8001f98:	4b23      	ldr	r3, [pc, #140]	; (8002028 <HAL_TIM_PeriodElapsedCallback+0x988>)
- 8001f9a:	ed93 7b00 	vldr	d7, [r3]
- 8001f9e:	4b23      	ldr	r3, [pc, #140]	; (800202c <HAL_TIM_PeriodElapsedCallback+0x98c>)
- 8001fa0:	ed93 6b00 	vldr	d6, [r3]
- 8001fa4:	4b24      	ldr	r3, [pc, #144]	; (8002038 <HAL_TIM_PeriodElapsedCallback+0x998>)
- 8001fa6:	ed93 5b00 	vldr	d5, [r3]
- 8001faa:	eeb0 2b45 	vmov.f64	d2, d5
- 8001fae:	eeb0 1b46 	vmov.f64	d1, d6
- 8001fb2:	eeb0 0b47 	vmov.f64	d0, d7
- 8001fb6:	f002 f871 	bl	800409c <publish_vel>
+ 8001f94:	4b24      	ldr	r3, [pc, #144]	; (8002028 <HAL_TIM_PeriodElapsedCallback+0x988>)
+ 8001f96:	ed93 7b00 	vldr	d7, [r3]
+ 8001f9a:	4b24      	ldr	r3, [pc, #144]	; (800202c <HAL_TIM_PeriodElapsedCallback+0x98c>)
+ 8001f9c:	ed93 6b00 	vldr	d6, [r3]
+ 8001fa0:	4b25      	ldr	r3, [pc, #148]	; (8002038 <HAL_TIM_PeriodElapsedCallback+0x998>)
+ 8001fa2:	ed93 5b00 	vldr	d5, [r3]
+ 8001fa6:	eeb0 2b45 	vmov.f64	d2, d5
+ 8001faa:	eeb0 1b46 	vmov.f64	d1, d6
+ 8001fae:	eeb0 0b47 	vmov.f64	d0, d7
+ 8001fb2:	f002 f873 	bl	800409c <publish_vel>
 //			publish_vel(get_vel_x, get_vel_y, get_vel_z);
 			kkk = 0;
- 8001fba:	4b20      	ldr	r3, [pc, #128]	; (800203c <HAL_TIM_PeriodElapsedCallback+0x99c>)
- 8001fbc:	2200      	movs	r2, #0
- 8001fbe:	601a      	str	r2, [r3, #0]
+ 8001fb6:	4b21      	ldr	r3, [pc, #132]	; (800203c <HAL_TIM_PeriodElapsedCallback+0x99c>)
+ 8001fb8:	2200      	movs	r2, #0
+ 8001fba:	601a      	str	r2, [r3, #0]
 		}
 	}
 }
- 8001fc0:	bf00      	nop
- 8001fc2:	3708      	adds	r7, #8
- 8001fc4:	46bd      	mov	sp, r7
- 8001fc6:	bd80      	pop	{r7, pc}
+ 8001fbc:	bf00      	nop
+ 8001fbe:	3708      	adds	r7, #8
+ 8001fc0:	46bd      	mov	sp, r7
+ 8001fc2:	bd80      	pop	{r7, pc}
+ 8001fc4:	f3af 8000 	nop.w
  8001fc8:	00000000 	.word	0x00000000
  8001fcc:	408f4000 	.word	0x408f4000
  8001fd0:	24000618 	.word	0x24000618

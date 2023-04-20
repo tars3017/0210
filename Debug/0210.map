@@ -5139,8 +5139,7 @@ LOAD /opt/st/stm32cubeide_1.10.1/plugins/com.st.stm32cube.ide.mcu.externaltools.
  .text.MX_DMA_Init
                 0x0000000008001378       0x50 ./Core/Src/main.o
  .text.MX_GPIO_Init
-                0x00000000080013c8      0x2d4 ./Core/Src/main.o
- *fill*         0x000000000800169c        0x4 
+                0x00000000080013c8      0x2d8 ./Core/Src/main.o
  .text.HAL_TIM_PeriodElapsedCallback
                 0x00000000080016a0      0x9a0 ./Core/Src/main.o
                 0x00000000080016a0                HAL_TIM_PeriodElapsedCallback
