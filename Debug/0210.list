@@ -625,9 +625,9 @@ int main(void)
  800088e:	4b5d      	ldr	r3, [pc, #372]	; (8000a04 <main+0x384>)
  8000890:	e9c1 2300 	strd	r2, r3, [r1]
 
-	gear = 70;
+	gear = 75;
  8000894:	4b5c      	ldr	r3, [pc, #368]	; (8000a08 <main+0x388>)
- 8000896:	2246      	movs	r2, #70	; 0x46
+ 8000896:	224b      	movs	r2, #75	; 0x4b
  8000898:	601a      	str	r2, [r3, #0]
   /* USER CODE END 1 */
 
@@ -2950,9 +2950,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  80016ba:	681b      	ldr	r3, [r3, #0]
  80016bc:	f1b3 4f80 	cmp.w	r3, #1073741824	; 0x40000000
  80016c0:	f040 8401 	bne.w	8001ec6 <HAL_TIM_PeriodElapsedCallback+0x816>
-//		SP2 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z); // fr
-//		SP3 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z); // rl
-//		SP4 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z); // rr
+//		SP3 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z); // fr
+//		SP4 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z); // lr
+//		SP2 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z); // rr
 
 
 		enc1 = __HAL_TIM_GetCounter(&htim3);

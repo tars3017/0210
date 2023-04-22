@@ -1042,9 +1042,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim -> Instance == TIM2){
 
 //		SP1 = 1/r * (get_vel_x - get_vel_y - (lx + ly) * get_vel_z); // fl
-//		SP2 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z); // fr
-//		SP3 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z); // rl
-//		SP4 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z); // rr
+//		SP3 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z); // fr
+//		SP4 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z); // lr
+//		SP2 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z); // rr
 
 
 		enc1 = __HAL_TIM_GetCounter(&htim3);
