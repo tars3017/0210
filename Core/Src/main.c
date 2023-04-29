@@ -125,14 +125,14 @@ int main(void)
 	error4 = PV4 - SP4;
 	enc1 = 0, enc2 = 0, enc3 = 0, enc4 = 0;
 
-	Kp1 = 1.314238; // blue
-	Ki1 = 37.12271; // blue
-	Kp2 = 1.8217; // purple
-	Ki2 = 48.293; // purple
-	Kp3 = 1;
-	Ki3 = 30;
-	Kp4 = 1;
-	Ki4 = 30;
+	Kp1 = 0.361732063; // blue
+	Ki1 = 15.80374981; // blue
+	Kp2 = 0.394239297; // purple
+	Ki2 = 16.97823652; // purple
+	Kp3 = 0.541670637;  // 801
+	Ki3 = 18.96397104; // 801
+	Kp4 = 0.408122176;  // DC9
+	Ki4 = 15.83432596;  // DC9
 
 	error_last1 = 0;
 	error_last2 = 0;
@@ -1055,10 +1055,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 
 		n++;
 
-		PV1 = (double) enc1 / (4 * 512 * 36 * 0.001);
-		PV2 = (double) enc2 / (4 * 512 * 36 * 0.001);
-		PV3 = (double) enc3 / (4 * 500 * 36 * 0.001);
-		PV4 = (double) enc4 / (4 * 512 * gear * 0.001);
+		PV1 = (double) enc1 / (4 * 512 * 27 * 0.001);
+		PV2 = (double) enc2 / (4 * 512 * 27 * 0.001);
+		PV3 = (double) enc3 / (4 * 500 * 27 * 0.001);
+		PV4 = (double) enc4 / (4 * 512 * 64 * 0.001);
 
  		__HAL_TIM_SetCounter(&htim3, 0);
  		__HAL_TIM_SetCounter(&htim8, 0);
