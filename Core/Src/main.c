@@ -147,9 +147,9 @@ int main(void)
 	push_vel_y = 0;
 	push_vel_z = 0;
 
-	lx = 23;
+	lx = 23; // lx, ly not measure yet
 	ly = 25;
-	r = 10;
+	r = 5; // cm(measure on 5/18)
 
 	gear = 75;
   /* USER CODE END 1 */
@@ -172,6 +172,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_TIM2_Init();
   MX_TIM3_Init();
   MX_TIM4_Init();
@@ -184,7 +185,6 @@ int main(void)
   MX_TIM23_Init();
   MX_TIM24_Init();
   MX_USART3_UART_Init();
-  MX_DMA_Init();
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_Base_Start_IT(&htim2);
@@ -1039,15 +1039,15 @@ PID ?�度*/
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim -> Instance == TIM2){
 
-		SP3 = 1/r * (get_vel_x - get_vel_y - (lx + ly) * get_vel_z); // fl
-		SP1 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z); // fr
-		SP4 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z); // rl
-		SP2 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z); // rr
+//		SP3 = 1/r * (get_vel_x - get_vel_y - (lx + ly) * get_vel_z); // fl
+//		SP1 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z); // fr
+//		SP4 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z); // rl
+//		SP2 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z); // rr
 
-		// 1 -> fr
-		// 2 -> rr
-		// 3 -> fl
-		// 4 -> rl
+		// 1 -> fr blue
+		// 2 -> rr purple
+		// 3 -> fl 801
+		// 4 -> rl DC-9
 
 
 		enc1 = __HAL_TIM_GetCounter(&htim3) * (-1);
