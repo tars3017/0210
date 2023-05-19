@@ -147,9 +147,9 @@ int main(void)
 	push_vel_y = 0;
 	push_vel_z = 0;
 
-	lx = 23; // lx, ly not measure yet
-	ly = 25;
-	r = 5; // cm(measure on 5/18)
+	lx = 0.08; // lx, ly not measure yet (all use m)
+	ly = 0.2;
+	r = 0.05; // m(measure on 5/18)
 
 	gear = 75;
   /* USER CODE END 1 */
