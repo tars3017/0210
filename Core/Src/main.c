@@ -147,9 +147,9 @@ int main(void)
 	push_vel_y = 0;
 	push_vel_z = 0;
 
-	lx = 0.5825; // lx 58.25 mm(forward backward direction)
-	ly = 1.0175; // ly 101.75 mm
-	r = 0.5; // unit 10 cm(measure on 5/18)
+	lx = 5.825; // lx 58.25 mm(forward backward direction)
+	ly = 10.175; // ly 101.75 mm
+	r = 5; // unit 10 cm(measure on 5/18)
 
 	gear = 75;
   /* USER CODE END 1 */
@@ -1039,10 +1039,10 @@ PID ?�度*/
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim -> Instance == TIM2){
 
-//		SP3 = 1/r * (get_vel_x - get_vel_y - (lx + ly) * get_vel_z); // fl
-//		SP1 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z); // fr
-//		SP4 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z); // rl
-//		SP2 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z); // rr
+		SP3 = 1/r * (get_vel_x - get_vel_y - (lx + ly) * get_vel_z); // fl
+		SP1 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z); // fr
+		SP4 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z); // rl
+		SP2 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z); // rr
 
 		// 1 -> fr blue
 		// 2 -> rr purple
