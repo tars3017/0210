@@ -530,22 +530,22 @@ int main(void)
  800079c:	a364      	add	r3, pc, #400	; (adr r3, 8000930 <main+0x2b0>)
  800079e:	e9d3 2300 	ldrd	r2, r3, [r3]
  80007a2:	e9c1 2300 	strd	r2, r3, [r1]
-	Kp3 = 0.541670637;  // 801
+	Kp3 = 0.408122176;  // 801 0.408122176
  80007a6:	4987      	ldr	r1, [pc, #540]	; (80009c4 <main+0x344>)
  80007a8:	a363      	add	r3, pc, #396	; (adr r3, 8000938 <main+0x2b8>)
  80007aa:	e9d3 2300 	ldrd	r2, r3, [r3]
  80007ae:	e9c1 2300 	strd	r2, r3, [r1]
-	Ki3 = 18.96397104; // 801
+	Ki3 = 15.83432596; // 801 15.83432596
  80007b2:	4985      	ldr	r1, [pc, #532]	; (80009c8 <main+0x348>)
  80007b4:	a362      	add	r3, pc, #392	; (adr r3, 8000940 <main+0x2c0>)
  80007b6:	e9d3 2300 	ldrd	r2, r3, [r3]
  80007ba:	e9c1 2300 	strd	r2, r3, [r1]
-	Kp4 = 0.408122176;  // DC9
+	Kp4 = 0.541670637;  // DC9 0.541670637
  80007be:	4983      	ldr	r1, [pc, #524]	; (80009cc <main+0x34c>)
  80007c0:	a361      	add	r3, pc, #388	; (adr r3, 8000948 <main+0x2c8>)
  80007c2:	e9d3 2300 	ldrd	r2, r3, [r3]
  80007c6:	e9c1 2300 	strd	r2, r3, [r1]
-	Ki4 = 15.83432596;  // DC9
+	Ki4 = 18.96397104;  // DC9 18.96397104
  80007ca:	4981      	ldr	r1, [pc, #516]	; (80009d0 <main+0x350>)
  80007cc:	a360      	add	r3, pc, #384	; (adr r3, 8000950 <main+0x2d0>)
  80007ce:	e9d3 2300 	ldrd	r2, r3, [r3]
@@ -717,14 +717,14 @@ int main(void)
  800092c:	3fd93b37 	.word	0x3fd93b37
  8000930:	b5652721 	.word	0xb5652721
  8000934:	4030fa6d 	.word	0x4030fa6d
- 8000938:	a8e3caa6 	.word	0xa8e3caa6
- 800093c:	3fe1555d 	.word	0x3fe1555d
- 8000940:	ce5b1753 	.word	0xce5b1753
- 8000944:	4032f6c6 	.word	0x4032f6c6
- 8000948:	79ac4f90 	.word	0x79ac4f90
- 800094c:	3fda1eac 	.word	0x3fda1eac
- 8000950:	c5b0cebf 	.word	0xc5b0cebf
- 8000954:	402fab2c 	.word	0x402fab2c
+ 8000938:	79ac4f90 	.word	0x79ac4f90
+ 800093c:	3fda1eac 	.word	0x3fda1eac
+ 8000940:	c5b0cebf 	.word	0xc5b0cebf
+ 8000944:	402fab2c 	.word	0x402fab2c
+ 8000948:	a8e3caa6 	.word	0xa8e3caa6
+ 800094c:	3fe1555d 	.word	0x3fe1555d
+ 8000950:	ce5b1753 	.word	0xce5b1753
+ 8000954:	4032f6c6 	.word	0x4032f6c6
  8000958:	cccccccd 	.word	0xcccccccd
  800095c:	40174ccc 	.word	0x40174ccc
  8000960:	9999999a 	.word	0x9999999a
