@@ -147,9 +147,9 @@ int main(void)
 	push_vel_y = 0;
 	push_vel_z = 0;
 
-	lx = 5.825; // lx 58.25 mm(forward backward direction)
-	ly = 10.175; // ly 101.75 mm
-	r = 5; // unit 10 cm(measure on 5/18)
+	lx = 0.05825; // lx 58.25 mm(forward backward direction)
+	ly = 0.10175; // ly 101.75 mm
+	r = 0.05; // unit m(measure on 5/18)
 
 	gear = 75;
   /* USER CODE END 1 */
