@@ -101,7 +101,6 @@ double lx, ly, r; // car's length
 double get_vel_x, get_vel_y, get_vel_z;
 double push_vel_x, push_vel_y, push_vel_z;
 int gear;
-const double rpm_to_radps = 0.1047198;
 // void publish_vel(double x, double y, double z);
 
 /* USER CODE END 0 */
@@ -1041,10 +1040,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim -> Instance == TIM2){
 
 		// rad/s to rpm
-		SP2 = 1/r * (get_vel_x * rpm_to_radps - get_vel_y * rpm_to_radps - (lx + ly) * get_vel_z); // fl
-		SP1 = 1/r * (get_vel_x * rpm_to_radps + get_vel_y * rpm_to_radps + (lx + ly) * get_vel_z); // fr
-		SP4 = 1/r * (get_vel_x * rpm_to_radps + get_vel_y * rpm_to_radps - (lx + ly) * get_vel_z); // rl
-		SP3 = 1/r * (get_vel_x * rpm_to_radps - get_vel_y * rpm_to_radps + (lx + ly) * get_vel_z); // rr
+		SP2 = 1/r * (get_vel_x - get_vel_y - (lx + ly) * get_vel_z) / 9.85413; // fl
+		SP1 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z) / 9.77036; // fr
+		SP4 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z) / 10.0845; // rl
+		SP3 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z) / 9.86461; // rr
+//      SP ~ 1 is suitable speed
 
 		// 1 -> front right
 		// 2 -> front left
@@ -1169,9 +1169,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		error_last3 = error3;
 		error_last4 = error4;
 
-		push_vel_x = (PV1 + PV2 + PV3 + PV4) / rpm_to_radps * r/4 ;
-		push_vel_y = (-PV2 + PV1 + PV4 - PV3) / rpm_to_radps * r/4 ;
-		push_vel_z = (-PV2 + PV1 - PV4 + PV3) / rpm_to_radps * r/(4 * (lx + ly) );
+		// rpm_to_radps
+		push_vel_x = (PV1 + PV2 + PV3 + PV4) * r/4 ;
+		push_vel_y = (-PV2 + PV1 + PV4 - PV3) * r/4 ;
+		push_vel_z = (-PV2 + PV1 - PV4 + PV3) * r/(4 * (lx + ly) );
 
 		// 1 -> front right
 		// 2 -> front left
