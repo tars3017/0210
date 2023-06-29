@@ -101,6 +101,7 @@ double lx, ly, r; // car's length
 double get_vel_x, get_vel_y, get_vel_z;
 double push_vel_x, push_vel_y, push_vel_z;
 int gear;
+double wheel_trans1, wheel_trans2, wheel_trans3, wheel_trans4;
 // void publish_vel(double x, double y, double z);
 
 /* USER CODE END 0 */
@@ -152,6 +153,11 @@ int main(void)
 	r = 0.05; // unit m(measure on 5/18)
 
 	gear = 75;
+
+	wheel_trans2 = 9.85413;
+	wheel_trans1 = 9.77036;
+	wheel_trans4 = 10.0845;
+	wheel_trans3 = 9.86461;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -1040,10 +1046,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim -> Instance == TIM2){
 
 		// rad/s to rpm
-		SP2 = 1/r * (get_vel_x - get_vel_y - (lx + ly) * get_vel_z) / 9.85413; // fl
-		SP1 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z) / 9.77036; // fr
-		SP4 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z) / 10.0845; // rl
-		SP3 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z) / 9.86461; // rr
+		SP2 = 1/r * (get_vel_x - get_vel_y - (lx + ly) * get_vel_z) / wheel_trans2; // fl
+		SP1 = 1/r * (get_vel_x + get_vel_y + (lx + ly) * get_vel_z) / wheel_trans1; // fr
+		SP4 = 1/r * (get_vel_x + get_vel_y - (lx + ly) * get_vel_z) / wheel_trans4; // rl
+		SP3 = 1/r * (get_vel_x - get_vel_y + (lx + ly) * get_vel_z) / wheel_trans3; // rr
 //      SP ~ 1 is suitable speed
 
 		// 1 -> front right
@@ -1170,9 +1176,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 		error_last4 = error4;
 
 		// rpm_to_radps
-		push_vel_x = (PV1 + PV2 + PV3 + PV4) * r/4 ;
-		push_vel_y = (-PV2 + PV1 + PV4 - PV3) * r/4 ;
-		push_vel_z = (-PV2 + PV1 - PV4 + PV3) * r/(4 * (lx + ly) );
+		push_vel_x = (PV1*wheel_trans1 + PV2*wheel_trans2 + PV3*wheel_trans3 + PV4*wheel_trans4) * r/4 ;
+		push_vel_y = (-PV2*wheel_trans2 + PV1*wheel_trans1 + PV4*wheel_trans4 - PV3*wheel_trans3) * r/4 ;
+		push_vel_z = (-PV2*wheel_trans2 + PV1*wheel_trans1 - PV4*wheel_trans4 + PV3*wheel_trans3) * r/(4 * (lx + ly) );
 
 		// 1 -> front right
 		// 2 -> front left
